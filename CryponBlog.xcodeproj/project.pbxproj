@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D1035DF278ECFC50019AD60 /* CryponBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1035DE278ECFC50019AD60 /* CryponBlogApp.swift */; };
+		3D1035E1278ECFC50019AD60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1035E0278ECFC50019AD60 /* ContentView.swift */; };
+		3D1035E3278ECFCA0019AD60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1035E2278ECFCA0019AD60 /* Assets.xcassets */; };
+		3D1035E6278ECFCA0019AD60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1035E5278ECFCA0019AD60 /* Preview Assets.xcassets */; };
+		3D1035F0278ECFCB0019AD60 /* CryponBlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1035EF278ECFCB0019AD60 /* CryponBlogTests.swift */; };
+		3D1035FA278ECFCB0019AD60 /* CryponBlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1035F9278ECFCB0019AD60 /* CryponBlogUITests.swift */; };
+		3D1035FC278ECFCB0019AD60 /* CryponBlogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1035FB278ECFCB0019AD60 /* CryponBlogUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D1035EC278ECFCB0019AD60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D1035D3278ECFC50019AD60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D1035DA278ECFC50019AD60;
+			remoteInfo = CryponBlog;
+		};
+		3D1035F6278ECFCB0019AD60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D1035D3278ECFC50019AD60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D1035DA278ECFC50019AD60;
+			remoteInfo = CryponBlog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D1035DB278ECFC50019AD60 /* CryponBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryponBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1035DE278ECFC50019AD60 /* CryponBlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryponBlogApp.swift; sourceTree = "<group>"; };
+		3D1035E0278ECFC50019AD60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D1035E2278ECFCA0019AD60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D1035E5278ECFCA0019AD60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3D1035EB278ECFCB0019AD60 /* CryponBlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryponBlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1035EF278ECFCB0019AD60 /* CryponBlogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryponBlogTests.swift; sourceTree = "<group>"; };
+		3D1035F5278ECFCB0019AD60 /* CryponBlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryponBlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1035F9278ECFCB0019AD60 /* CryponBlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryponBlogUITests.swift; sourceTree = "<group>"; };
+		3D1035FB278ECFCB0019AD60 /* CryponBlogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryponBlogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D1035D8278ECFC50019AD60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D1035E8278ECFCB0019AD60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D1035F2278ECFCB0019AD60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D1035D2278ECFC50019AD60 = {
+			isa = PBXGroup;
+			children = (
+				3D1035DD278ECFC50019AD60 /* CryponBlog */,
+				3D1035EE278ECFCB0019AD60 /* CryponBlogTests */,
+				3D1035F8278ECFCB0019AD60 /* CryponBlogUITests */,
+				3D1035DC278ECFC50019AD60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D1035DC278ECFC50019AD60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D1035DB278ECFC50019AD60 /* CryponBlog.app */,
+				3D1035EB278ECFCB0019AD60 /* CryponBlogTests.xctest */,
+				3D1035F5278ECFCB0019AD60 /* CryponBlogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D1035DD278ECFC50019AD60 /* CryponBlog */ = {
+			isa = PBXGroup;
+			children = (
+				3D1035DE278ECFC50019AD60 /* CryponBlogApp.swift */,
+				3D1035E0278ECFC50019AD60 /* ContentView.swift */,
+				3D1035E2278ECFCA0019AD60 /* Assets.xcassets */,
+				3D1035E4278ECFCA0019AD60 /* Preview Content */,
+			);
+			path = CryponBlog;
+			sourceTree = "<group>";
+		};
+		3D1035E4278ECFCA0019AD60 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3D1035E5278ECFCA0019AD60 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3D1035EE278ECFCB0019AD60 /* CryponBlogTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D1035EF278ECFCB0019AD60 /* CryponBlogTests.swift */,
+			);
+			path = CryponBlogTests;
+			sourceTree = "<group>";
+		};
+		3D1035F8278ECFCB0019AD60 /* CryponBlogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D1035F9278ECFCB0019AD60 /* CryponBlogUITests.swift */,
+				3D1035FB278ECFCB0019AD60 /* CryponBlogUITestsLaunchTests.swift */,
+			);
+			path = CryponBlogUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D1035DA278ECFC50019AD60 /* CryponBlog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D1035FF278ECFCB0019AD60 /* Build configuration list for PBXNativeTarget "CryponBlog" */;
+			buildPhases = (
+				3D1035D7278ECFC50019AD60 /* Sources */,
+				3D1035D8278ECFC50019AD60 /* Frameworks */,
+				3D1035D9278ECFC50019AD60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryponBlog;
+			productName = CryponBlog;
+			productReference = 3D1035DB278ECFC50019AD60 /* CryponBlog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D1035EA278ECFCB0019AD60 /* CryponBlogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D103602278ECFCB0019AD60 /* Build configuration list for PBXNativeTarget "CryponBlogTests" */;
+			buildPhases = (
+				3D1035E7278ECFCB0019AD60 /* Sources */,
+				3D1035E8278ECFCB0019AD60 /* Frameworks */,
+				3D1035E9278ECFCB0019AD60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D1035ED278ECFCB0019AD60 /* PBXTargetDependency */,
+			);
+			name = CryponBlogTests;
+			productName = CryponBlogTests;
+			productReference = 3D1035EB278ECFCB0019AD60 /* CryponBlogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D1035F4278ECFCB0019AD60 /* CryponBlogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D103605278ECFCB0019AD60 /* Build configuration list for PBXNativeTarget "CryponBlogUITests" */;
+			buildPhases = (
+				3D1035F1278ECFCB0019AD60 /* Sources */,
+				3D1035F2278ECFCB0019AD60 /* Frameworks */,
+				3D1035F3278ECFCB0019AD60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D1035F7278ECFCB0019AD60 /* PBXTargetDependency */,
+			);
+			name = CryponBlogUITests;
+			productName = CryponBlogUITests;
+			productReference = 3D1035F5278ECFCB0019AD60 /* CryponBlogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D1035D3278ECFC50019AD60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					3D1035DA278ECFC50019AD60 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					3D1035EA278ECFCB0019AD60 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 3D1035DA278ECFC50019AD60;
+					};
+					3D1035F4278ECFCB0019AD60 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 3D1035DA278ECFC50019AD60;
+					};
+				};
+			};
+			buildConfigurationList = 3D1035D6278ECFC50019AD60 /* Build configuration list for PBXProject "CryponBlog" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D1035D2278ECFC50019AD60;
+			productRefGroup = 3D1035DC278ECFC50019AD60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D1035DA278ECFC50019AD60 /* CryponBlog */,
+				3D1035EA278ECFCB0019AD60 /* CryponBlogTests */,
+				3D1035F4278ECFCB0019AD60 /* CryponBlogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D1035D9278ECFC50019AD60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D1035E6278ECFCA0019AD60 /* Preview Assets.xcassets in Resources */,
+				3D1035E3278ECFCA0019AD60 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D1035E9278ECFCB0019AD60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D1035F3278ECFCB0019AD60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D1035D7278ECFC50019AD60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D1035E1278ECFC50019AD60 /* ContentView.swift in Sources */,
+				3D1035DF278ECFC50019AD60 /* CryponBlogApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D1035E7278ECFCB0019AD60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D1035F0278ECFCB0019AD60 /* CryponBlogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D1035F1278ECFCB0019AD60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D1035FA278ECFCB0019AD60 /* CryponBlogUITests.swift in Sources */,
+				3D1035FC278ECFCB0019AD60 /* CryponBlogUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D1035ED278ECFCB0019AD60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D1035DA278ECFC50019AD60 /* CryponBlog */;
+			targetProxy = 3D1035EC278ECFCB0019AD60 /* PBXContainerItemProxy */;
+		};
+		3D1035F7278ECFCB0019AD60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D1035DA278ECFC50019AD60 /* CryponBlog */;
+			targetProxy = 3D1035F6278ECFCB0019AD60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D1035FD278ECFCB0019AD60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D1035FE278ECFCB0019AD60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D103600278ECFCB0019AD60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CryponBlog/Preview Content\"";
+				DEVELOPMENT_TEAM = VNTKV3F4W2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D103601278ECFCB0019AD60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CryponBlog/Preview Content\"";
+				DEVELOPMENT_TEAM = VNTKV3F4W2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D103603278ECFCB0019AD60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VNTKV3F4W2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryponBlog.app/CryponBlog";
+			};
+			name = Debug;
+		};
+		3D103604278ECFCB0019AD60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VNTKV3F4W2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryponBlog.app/CryponBlog";
+			};
+			name = Release;
+		};
+		3D103606278ECFCB0019AD60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VNTKV3F4W2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CryponBlog;
+			};
+			name = Debug;
+		};
+		3D103607278ECFCB0019AD60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VNTKV3F4W2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CryponBlog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D1035D6278ECFC50019AD60 /* Build configuration list for PBXProject "CryponBlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D1035FD278ECFCB0019AD60 /* Debug */,
+				3D1035FE278ECFCB0019AD60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D1035FF278ECFCB0019AD60 /* Build configuration list for PBXNativeTarget "CryponBlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D103600278ECFCB0019AD60 /* Debug */,
+				3D103601278ECFCB0019AD60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D103602278ECFCB0019AD60 /* Build configuration list for PBXNativeTarget "CryponBlogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D103603278ECFCB0019AD60 /* Debug */,
+				3D103604278ECFCB0019AD60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D103605278ECFCB0019AD60 /* Build configuration list for PBXNativeTarget "CryponBlogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D103606278ECFCB0019AD60 /* Debug */,
+				3D103607278ECFCB0019AD60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D1035D3278ECFC50019AD60 /* Project object */;
+}
