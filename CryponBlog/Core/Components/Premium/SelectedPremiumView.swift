@@ -58,11 +58,13 @@ struct SelectedPremiumView: View {
             BuyButton() {
                 print("on buy button \(months)")
                 if !storeManager.myProducts.isEmpty {
-                if months == "12" {
-                    storeManager.purchaseProduct(product: storeManager.myProducts[1])
+                    if months == "12" {
+                        storeManager.purchaseProduct(product: storeManager.myProducts[1])
+                    } else {
+                        storeManager.purchaseProduct(product: storeManager.myProducts[0])
+                    }
                 } else {
-                    storeManager.purchaseProduct(product: storeManager.myProducts[0])
-                }
+                    assertionFailure("No products available")
                 }
             }
         }
