@@ -1,0 +1,85 @@
+{
+  "identifier" : "1EF07843",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "7335FC23",
+      "localizations" : [
+
+      ],
+      "name" : "BlogSubscription",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "887154CB",
+          "introductoryOffer" : {
+            "internalID" : "42D50E0D",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Weekly Blog Subscription",
+              "displayName" : "Weekly Blog Subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.furkanbasoglu.crypon.blog.subscription.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Weekly Blog Subscription",
+          "subscriptionGroupID" : "7335FC23",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "39.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "54A96B47",
+          "introductoryOffer" : {
+            "internalID" : "628ABDCD",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Weekly Blog Subscription",
+              "displayName" : "Weekly Blog Subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.furkanbasoglu.crypon.blog.subscription.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Blog Subscription ",
+          "subscriptionGroupID" : "7335FC23",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 2
+  }
+}

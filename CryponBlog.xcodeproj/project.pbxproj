@@ -163,6 +163,7 @@
 		3DF9970427935A2500425E80 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		3DF997062793690800425E80 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		3DF997082793799100425E80 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		C0665F7628296AB800F8ECA4 /* Subscription.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subscription.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +233,7 @@
 				3D9F107427920EA0003A1D1B /* Core */,
 				3D1035DE278ECFC50019AD60 /* CryponBlogApp.swift */,
 				3D1035E0278ECFC50019AD60 /* ContentView.swift */,
+				C0665F7628296AB800F8ECA4 /* Subscription.storekit */,
 				3D1035E2278ECFCA0019AD60 /* Assets.xcassets */,
 				3D1035E4278ECFCA0019AD60 /* Preview Content */,
 			);
