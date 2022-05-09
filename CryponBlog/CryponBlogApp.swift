@@ -21,8 +21,8 @@ struct CryponBlogApp: App {
     
     let productIDs = [
         //Use your product IDs instead
-        "com.furkanbasoglu.CryponBlog.CryponQuotes",
-        "com.furkanbasoglu.CryponBlog.CryponQuotes2"
+        "com.furkanbasoglu.crypon.blog.subscription.monthly",
+        "com.furkanbasoglu.crypon.blog.subscription.weekly"
     ]
     
     init() {
