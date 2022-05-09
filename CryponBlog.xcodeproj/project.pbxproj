@@ -859,7 +859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryponBlog/Preview Content\"";
-				DEVELOPMENT_TEAM = VNTKV3F4W2;
+				DEVELOPMENT_TEAM = WN2BCRJWNR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryponBlog/Info.plist;
@@ -876,7 +876,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.furkanbasoglu.CryponBlog.temporary;
 				PRODUCT_NAME = Crypon;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
