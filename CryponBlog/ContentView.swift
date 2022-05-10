@@ -122,12 +122,6 @@ struct ContentView: View {
         .alert(isPresented: showAlert) {
             Alert(title: Text(alertMessage ?? ""))
         }
-#if DEBUG
-        .onAppear {
-            monthlySub = false
-            weeklySub = false
-        }
-#endif
     }
 }
 
