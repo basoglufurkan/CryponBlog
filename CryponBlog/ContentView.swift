@@ -105,7 +105,21 @@ struct ContentView: View {
         .bottomSheet(bottomSheetPosition: $selectedBottomSheetPosition, options: [  .noBottomPosition, .allowContentDrag, .swipeToDismiss, ], headerContent: {
             
         }, mainContent: {
-            SelectedPremiumView(months: months, total: total, freeDays: freeDays, is12Months: months == "12" ? true : false, storeManager: storeManager)
+            SelectedPremiumView(onClickPurchase: {
+                selectedBottomSheetPosition = .hidden
+                premiumBottomSheetPosition = .hidden
+                
+                print("on buy button \(months)")
+                if !storeManager.myProducts.isEmpty {
+                    if months == "12" {
+                        storeManager.purchaseProduct(product: storeManager.myProducts[1])
+                    } else {
+                        storeManager.purchaseProduct(product: storeManager.myProducts[0])
+                    }
+                } else {
+                    assertionFailure("No products available")
+                }
+            },months: months, total: total, freeDays: freeDays, is12Months: months == "12" ? true : false, storeManager: storeManager)
         })
         .alert(isPresented: showAlert) {
             Alert(title: Text(alertMessage ?? ""))

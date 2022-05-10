@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectedPremiumView: View {
+    let onClickPurchase: () -> Void
     var months: String
     var total: String
     var freeDays: String
@@ -52,25 +53,14 @@ struct SelectedPremiumView: View {
             Divider()
                 .padding()
             
-            BuyButton() {
-                print("on buy button \(months)")
-                if !storeManager.myProducts.isEmpty {
-                    if months == "12" {
-                        storeManager.purchaseProduct(product: storeManager.myProducts[1])
-                    } else {
-                        storeManager.purchaseProduct(product: storeManager.myProducts[0])
-                    }
-                } else {
-                    assertionFailure("No products available")
-                }
-            }
+            BuyButton(onClick: onClickPurchase)
         }
     }
 }
 
 struct SelectedPremiumView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectedPremiumView(months: "12", total: "11", freeDays: "7", is12Months: true, storeManager: StoreManager())
+        SelectedPremiumView(onClickPurchase: {}, months: "12", total: "11", freeDays: "7", is12Months: true, storeManager: StoreManager())
     }
 }
 
