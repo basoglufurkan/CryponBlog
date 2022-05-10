@@ -34,7 +34,7 @@ struct SelectedPremiumView: View {
                 
                 VStack{
                     HStack{
-                        Text("$35.00")
+                        Text("$51.96")
                             .foregroundColor(.red)
                             .strikethrough()
                             .opacity(is12Months ? 1 : 0)
@@ -42,7 +42,7 @@ struct SelectedPremiumView: View {
                         Text("$\(total)")
                             .font(.system(size: 16, weight: .bold, design: .default))
                     }
-                    Text("You saved 44%")
+                    Text("You saved 23%")
                         .foregroundColor(.green)
                         .opacity(is12Months ? 1 : 0)
                 }.padding()
