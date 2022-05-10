@@ -28,12 +28,13 @@ struct PremiumView: View {
             selectedPremiumBS = .top
         }
         
+        Text("Cancel anytime")
+        
         Button("Restore Purchases", action: restorePurchases)
             .foregroundColor(.blue)
             .font(.footnote)
             .padding(.init(top: -16, leading: 0, bottom: 0, trailing: 0))
         
-        Text("Cancel anytime")
         Spacer()
     }
 }
