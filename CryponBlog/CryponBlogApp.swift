@@ -35,7 +35,7 @@ struct CryponBlogApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                ContentView(storeManager: storeManager, months: "", total: "", freeDays: "")
+                ContentView(storeManager: storeManager, months: "", total: "")
                     .onAppear(perform: {
                         SKPaymentQueue.default().add(storeManager)
                         storeManager.getProducts(productIDs: productIDs)

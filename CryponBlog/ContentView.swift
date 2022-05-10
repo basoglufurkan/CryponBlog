@@ -26,7 +26,6 @@ struct ContentView: View {
     
     @State  var months: String
     @State  var total: String
-    @State  var freeDays: String
     
     @State private var alertMessage: String?
     private var showAlert: Binding<Bool> { Binding (
@@ -98,7 +97,6 @@ struct ContentView: View {
                 selectedPackage: { months, total, freeDays in
                     self.months = months
                     self.total = total
-                    self.freeDays = freeDays
                 },
                 selectedPremiumBS: $selectedBottomSheetPosition)
         })
@@ -119,7 +117,7 @@ struct ContentView: View {
                 } else {
                     assertionFailure("No products available")
                 }
-            },months: months, total: total, freeDays: freeDays, is12Months: months == "12" ? true : false, storeManager: storeManager)
+            },months: months, total: total, is12Months: months == "12" ? true : false, storeManager: storeManager)
         })
         .alert(isPresented: showAlert) {
             Alert(title: Text(alertMessage ?? ""))
