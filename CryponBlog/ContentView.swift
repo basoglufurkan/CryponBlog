@@ -94,7 +94,7 @@ struct ContentView: View {
                         }
                     }
                 },
-                selectedPackage: { months, total, freeDays in
+                selectedPackage: { months, total in
                     self.months = months
                     self.total = total
                 },

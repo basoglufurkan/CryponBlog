@@ -11,7 +11,6 @@ import SwiftUI
 //MARK:- Single Radio Button Field
 struct RadioButtonField: View {
     let months: String
-    let freeDays: String
     let price: String
     let is12Months: Bool
     let id: String
@@ -24,7 +23,6 @@ struct RadioButtonField: View {
     
     init(
         months: String,
-        freeDays: String,
         price: String,
         is12Months: Bool,
         id: String,
@@ -36,7 +34,6 @@ struct RadioButtonField: View {
         callback: @escaping (String)->()
     ) {
         self.months = months
-        self.freeDays = freeDays
         self.price = price
         self.is12Months = is12Months
         self.id = id
@@ -103,6 +100,6 @@ struct RadioButtonField: View {
 
 //struct RadioButtonField_Previews: PreviewProvider {
 //    static var previews: some View {
-//        RadioButtonField(months: "12", freeDays: "7", price: "1.66", is12Months: true, id: "", label: "")
+//        RadioButtonField(months: "12", price: "1.66", is12Months: true, id: "", label: "")
 //    }
 //}

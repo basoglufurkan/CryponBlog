@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PremiumView: View {
     let restorePurchases: () -> Void
-    var selectedPackage: (_ months: String, _ total: String, _ freeDays: String) -> Void
+    var selectedPackage: (_ months: String, _ total: String) -> Void
     
     @Binding var selectedPremiumBS: BottomSheetSelectedPremium
     @State var optionSelected = false
@@ -21,9 +21,9 @@ struct PremiumView: View {
             optionSelected = true
             
             if package == "months12" {
-                selectedPackage("12", "39.99", "7")
+                selectedPackage("12", "39.99")
             } else {
-                selectedPackage("1", "12.99", "3")
+                selectedPackage("1", "12.99")
             }
         }
         
