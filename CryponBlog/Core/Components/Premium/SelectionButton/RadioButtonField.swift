@@ -66,7 +66,7 @@ struct RadioButtonField: View {
                         Text(months == "1" ? "Week" : "Months")
                             .font(.system(size: 12, weight: .regular, design: .default))
                         
-                        Text("SAVE 44%")
+                        Text("SAVE 23%")
                             .foregroundColor(.white)
                             .padding(.top, 10)
                             .padding(.bottom, 10)
