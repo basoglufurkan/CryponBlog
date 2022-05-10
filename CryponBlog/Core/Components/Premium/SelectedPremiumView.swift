@@ -49,9 +49,6 @@ struct SelectedPremiumView: View {
             }
             .padding()
             
-            Text("\(freeDays) DAYS FREE!")
-                .font(.system(size: 16, weight: .bold, design: .default))
-            
             Divider()
                 .padding()
             
