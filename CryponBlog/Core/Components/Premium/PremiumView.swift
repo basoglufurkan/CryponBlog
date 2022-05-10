@@ -32,8 +32,6 @@ struct PremiumView: View {
         
         Button("Restore Purchases", action: restorePurchases)
             .foregroundColor(.blue)
-            .font(.footnote)
-            .padding(.init(top: -16, leading: 0, bottom: 0, trailing: 0))
         
         Spacer()
     }
