@@ -52,7 +52,7 @@ struct RadioButtonField: View {
             
             VStack{
                 Text("Best Value")
-                    .foregroundColor(Color.black)
+//                    .foregroundColor(Color.black)
                     .opacity(is12Months ? 1 : 0)
                 ZStack{
                     Image(systemName: "checkmark.circle.fill")
@@ -88,7 +88,7 @@ struct RadioButtonField: View {
                         
                     }
                     
-                    .foregroundColor(.black)
+//                    .foregroundColor(.black)
                     .padding()
                     .overlay(RoundedRectangle(cornerRadius: 5).stroke(self.isMarked ? Color.green : Color.black, lineWidth: 1.5))
                 }

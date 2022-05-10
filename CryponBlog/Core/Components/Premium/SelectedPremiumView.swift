@@ -17,7 +17,7 @@ struct SelectedPremiumView: View {
     var body: some View {
         VStack{
             Text("You Have Selected:")
-                .foregroundColor(.black)
+//                .foregroundColor(.black)
                 .font(.system(size: 16, weight: .bold, design: .default))
             
             HStack{
