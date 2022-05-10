@@ -28,8 +28,8 @@ struct ContentView: View {
     @State  var total: String
     @State  var freeDays: String
     
-    
-    
+    @AppStorage("com.furkanbasoglu.crypon.blog.subscription.monthly") var monthlySub = false
+    @AppStorage("com.furkanbasoglu.crypon.blog.subscription.weekly") var weeklySub = false
     
     var body: some View {
         
@@ -56,7 +56,7 @@ struct ContentView: View {
 //                    Text("Store")
 //                }
             
-            AllPosts( premiumBS: $premiumBottomSheetPosition, storeManager: storeManager)
+            AllPosts( premiumBS: $premiumBottomSheetPosition, storeManager: storeManager, unlockAllPosts: monthlySub || weeklySub )
                 .environmentObject(store)
                 .navigationBarHidden(true)
                 .tabItem {
@@ -87,6 +87,15 @@ struct ContentView: View {
         }, mainContent: {
             SelectedPremiumView(months: months, total: total, freeDays: freeDays, is12Months: months == "12" ? true : false, storeManager: storeManager)
         })
+#if DEBUG
+        .onAppear {
+            monthlySub = false
+            weeklySub = false
+        }
+
+#else
+        
+#endif
     }
 }
 

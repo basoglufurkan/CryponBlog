@@ -11,6 +11,7 @@ struct AllPosts: View {
     @EnvironmentObject var store: BlogPostsStore
     @Binding var premiumBS: BottomSheetPremium
     @StateObject var storeManager: StoreManager
+    var unlockAllPosts: Bool
     
     var body: some View {
         NavigationView {
@@ -24,7 +25,7 @@ struct AllPosts: View {
                         } else {
                             BlogPostCardLocked(premiumBS: $premiumBS, blogPost: store.blogPosts[index])
                         }
-                    } else if (!UserDefaults.standard.bool(forKey: storeManager.myProducts[0].productIdentifier) || !UserDefaults.standard.bool(forKey: storeManager.myProducts[1].productIdentifier)) {
+                    } else if !unlockAllPosts {
                         if index > 3 {
                             NavigationLink(destination: BlogPostView(blogPost: store.blogPosts[index])) {
                                 BlogPostCardList(blogPost: store.blogPosts[index])
@@ -49,7 +50,7 @@ struct AllPosts: View {
 
 struct AllPosts_Previews: PreviewProvider {
     static var previews: some View {
-        AllPosts(premiumBS: .constant(.hidden), storeManager: StoreManager())
+        AllPosts(premiumBS: .constant(.hidden), storeManager: StoreManager(), unlockAllPosts: false)
     }
 }
 
