@@ -34,8 +34,8 @@ struct ContentView: View {
         )
     }
     
-    @AppStorage("com.furkanbasoglu.crypon.blog.subscription.monthly") var monthlySub = false
-    @AppStorage("com.furkanbasoglu.crypon.blog.subscription.weekly") var weeklySub = false
+    @AppStorage(SubscriptionProduct.monthlySub.productID) var monthlySub = false
+    @AppStorage(SubscriptionProduct.weeklySub.productID) var weeklySub = false
     
     var body: some View {
         

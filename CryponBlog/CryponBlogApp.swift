@@ -9,6 +9,13 @@ import SwiftUI
 import Firebase
 import StoreKit
 
+struct SubscriptionProduct {
+    let productID: String
+    
+    static let weeklySub = SubscriptionProduct(productID: "com.furkanbasoglu.crypon.blog.subscription.weekly")
+    static let monthlySub = SubscriptionProduct(productID: "com.furkanbasoglu.crypon.blog.subscription.monthly")
+}
+
 @main
 struct CryponBlogApp: App {
     
@@ -21,8 +28,8 @@ struct CryponBlogApp: App {
     
     let productIDs = [
         //Use your product IDs instead
-        "com.furkanbasoglu.crypon.blog.subscription.monthly",
-        "com.furkanbasoglu.crypon.blog.subscription.weekly"
+        SubscriptionProduct.monthlySub.productID,
+        SubscriptionProduct.weeklySub.productID
     ]
     
     init() {
