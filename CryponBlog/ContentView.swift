@@ -109,11 +109,14 @@ struct ContentView: View {
                 
                 print("on buy button \(months)")
                 if !storeManager.myProducts.isEmpty {
-                    if months == "12" {
-                        storeManager.purchaseProduct(product: storeManager.myProducts[1])
-                    } else {
-                        storeManager.purchaseProduct(product: storeManager.myProducts[0])
-                    }
+                    let productID = months == "12" ? SubscriptionProduct.monthlySub.productID : SubscriptionProduct.weeklySub.productID
+                    
+                    guard let product = storeManager.myProducts.first(where: { $0.productIdentifier == productID }) else {
+                        assertionFailure("No product with ID: \(productID)")
+                        return }
+                        
+                    storeManager.purchaseProduct(product: product)
+
                 } else {
                     assertionFailure("No products available")
                 }
