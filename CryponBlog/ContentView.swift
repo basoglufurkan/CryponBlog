@@ -84,6 +84,8 @@ struct ContentView: View {
         }, mainContent: {
             PremiumView(
                 restorePurchases: { [weak storeManager] in
+                    premiumBottomSheetPosition = .hidden
+                    
                     storeManager?.restorePurchases { result in
                         switch result {
                         case .success:
