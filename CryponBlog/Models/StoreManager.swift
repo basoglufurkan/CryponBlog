@@ -8,11 +8,14 @@
 import Foundation
 import StoreKit
 
+typealias RestoreCompletion = (Result<Void ,Error>) -> Void
+
 class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     var request: SKProductsRequest!
     @Published var myProducts = [SKProduct]()
     @Published var transactionState: SKPaymentTransactionState?
+    private var restoreCompletion: RestoreCompletion?
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         print("Did receive response")
@@ -72,6 +75,21 @@ class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPa
             print("User can't make payment.")
         }
         
+    }
+    
+    func restorePurchases(completion: @escaping (Result<Void ,Error>) -> Void) {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+        restoreCompletion = completion
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        restoreCompletion?(.success(()))
+        restoreCompletion = nil
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        restoreCompletion?(.failure(error))
+        restoreCompletion = nil
     }
 }
 

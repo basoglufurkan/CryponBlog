@@ -28,6 +28,13 @@ struct ContentView: View {
     @State  var total: String
     @State  var freeDays: String
     
+    @State private var alertMessage: String?
+    private var showAlert: Binding<Bool> { Binding (
+        get: { alertMessage != nil },
+        set: { if !$0 { alertMessage = nil } }
+        )
+    }
+    
     @AppStorage("com.furkanbasoglu.crypon.blog.subscription.monthly") var monthlySub = false
     @AppStorage("com.furkanbasoglu.crypon.blog.subscription.weekly") var weeklySub = false
     
@@ -74,27 +81,38 @@ struct ContentView: View {
             
         }
         .bottomSheet(bottomSheetPosition: $premiumBottomSheetPosition, options: [  .noBottomPosition, .allowContentDrag, .swipeToDismiss, ], headerContent: {
-            
         }, mainContent: {
-            PremiumView(selectedPackage: { months, total, freeDays in
-                self.months = months
-                self.total = total
-                self.freeDays = freeDays
-            }, selectedPremiumBS: $selectedBottomSheetPosition)
+            PremiumView(
+                restorePurchases: { [weak storeManager] in
+                    storeManager?.restorePurchases { result in
+                        switch result {
+                        case .success:
+                            alertMessage = "Restore Complete"
+                        case .failure:
+                            alertMessage = "Restore Failed with Error"
+                        }
+                    }
+                },
+                selectedPackage: { months, total, freeDays in
+                    self.months = months
+                    self.total = total
+                    self.freeDays = freeDays
+                },
+                selectedPremiumBS: $selectedBottomSheetPosition)
         })
         .bottomSheet(bottomSheetPosition: $selectedBottomSheetPosition, options: [  .noBottomPosition, .allowContentDrag, .swipeToDismiss, ], headerContent: {
             
         }, mainContent: {
             SelectedPremiumView(months: months, total: total, freeDays: freeDays, is12Months: months == "12" ? true : false, storeManager: storeManager)
         })
+        .alert(isPresented: showAlert) {
+            Alert(title: Text(alertMessage ?? ""))
+        }
 #if DEBUG
         .onAppear {
             monthlySub = false
             weeklySub = false
         }
-
-#else
-        
 #endif
     }
 }
