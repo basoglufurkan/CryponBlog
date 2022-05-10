@@ -12,11 +12,14 @@ struct PremiumView: View {
     var selectedPackage: (_ months: String, _ total: String, _ freeDays: String) -> Void
     
     @Binding var selectedPremiumBS: BottomSheetSelectedPremium
+    @State var optionSelected = false
     
     var body: some View {
         
         Spacer()
         RadioButtonGroups { package in
+            optionSelected = true
+            
             if package == "months12" {
                 selectedPackage("12", "39.99", "7")
             } else {
@@ -27,6 +30,8 @@ struct PremiumView: View {
         BuyButton(){
             selectedPremiumBS = .top
         }
+        .buttonStyle(.plain)
+        .disabled(!optionSelected)
         
         Text("Cancel anytime")
         
