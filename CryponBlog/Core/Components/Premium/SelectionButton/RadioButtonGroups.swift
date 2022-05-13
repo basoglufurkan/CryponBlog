@@ -29,6 +29,10 @@ struct RadioButtonGroups: View {
             
             Spacer()
         }
+        .onAppear {
+            // set default selection
+            radioGroupCallback(id: Packages.months12.rawValue)
+        }
     }
     
     var radioMaleMajority: some View {
