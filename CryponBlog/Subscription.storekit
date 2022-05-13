@@ -56,8 +56,8 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Weekly Blog Subscription",
-              "displayName" : "Weekly Blog Subscription",
+              "description" : "Mnothly Blog Subscription",
+              "displayName" : "Monthly Blog Subscription",
               "locale" : "en_US"
             }
           ],
