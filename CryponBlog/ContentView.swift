@@ -87,8 +87,8 @@ struct ContentView: View {
                     
                     storeManager?.restorePurchases { result in
                         switch result {
-                        case .success:
-                            alertMessage = "Restore Complete"
+                        case let .success(hasRestoredProducts):
+                            alertMessage = hasRestoredProducts ? "Restore Complete" : "Nothing to Restore"
                         case .failure:
                             alertMessage = "Restore Failed with Error"
                         }

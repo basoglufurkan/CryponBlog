@@ -8,7 +8,7 @@
 import Foundation
 import StoreKit
 
-typealias RestoreCompletion = (Result<Void ,Error>) -> Void
+typealias RestoreCompletion = (Result<Bool ,Error>) -> Void
 
 class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPaymentTransactionObserver {
     let onPurchaseProduct: (SKProduct) -> ()
@@ -16,6 +16,7 @@ class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPa
     @Published var myProducts = [SKProduct]()
     @Published var transactionState: SKPaymentTransactionState?
     private var restoreCompletion: RestoreCompletion?
+    private var hasRestoredProducts: Bool?
     
     init(onPurchaseProduct: @escaping (SKProduct) -> ()) {
         self.onPurchaseProduct = onPurchaseProduct
@@ -58,6 +59,7 @@ class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPa
                 queue.finishTransaction(transaction)
                 transactionState = .purchased
             case .restored:
+                hasRestoredProducts = true
                 handlePurchase(productID: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .restored
@@ -87,13 +89,14 @@ class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPa
         
     }
     
-    func restorePurchases(completion: @escaping (Result<Void ,Error>) -> Void) {
+    func restorePurchases(completion: @escaping RestoreCompletion) {
         SKPaymentQueue.default().restoreCompletedTransactions()
+        hasRestoredProducts = nil
         restoreCompletion = completion
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        restoreCompletion?(.success(()))
+        restoreCompletion?(.success(hasRestoredProducts == true))
         restoreCompletion = nil
     }
     
