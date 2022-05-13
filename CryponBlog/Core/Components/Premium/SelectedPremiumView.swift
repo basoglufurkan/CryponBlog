@@ -59,7 +59,7 @@ struct SelectedPremiumView: View {
 
 struct SelectedPremiumView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectedPremiumView(onClickPurchase: {}, months: "12", total: "11", is12Months: true, storeManager: StoreManager())
+        SelectedPremiumView(onClickPurchase: {}, months: "12", total: "11", is12Months: true, storeManager: StoreManager(onPurchaseProduct: { _ in }))
     }
 }
 

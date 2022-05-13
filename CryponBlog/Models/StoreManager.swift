@@ -11,11 +11,15 @@ import StoreKit
 typealias RestoreCompletion = (Result<Void ,Error>) -> Void
 
 class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    
+    let onPurchaseProduct: (SKProduct) -> ()
     var request: SKProductsRequest!
     @Published var myProducts = [SKProduct]()
     @Published var transactionState: SKPaymentTransactionState?
     private var restoreCompletion: RestoreCompletion?
+    
+    init(onPurchaseProduct: @escaping (SKProduct) -> ()) {
+        self.onPurchaseProduct = onPurchaseProduct
+    }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         print("Did receive response")
@@ -50,11 +54,11 @@ class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPa
             case .purchasing:
                 transactionState = .purchasing
             case .purchased:
-                UserDefaults.standard.setValue(true, forKey: transaction.payment.productIdentifier)
+                handlePurchase(productID: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .purchased
             case .restored:
-                UserDefaults.standard.setValue(true, forKey: transaction.payment.productIdentifier)
+                handlePurchase(productID: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .restored
             case .failed, .deferred:
@@ -64,6 +68,12 @@ class StoreManager: NSObject, ObservableObject , SKProductsRequestDelegate, SKPa
             default:
                 queue.finishTransaction(transaction)
             }
+        }
+    }
+    
+    private func handlePurchase(productID: String) {
+        if let product = myProducts.first(where: { $0.productIdentifier == productID }) {
+            onPurchaseProduct(product)
         }
     }
     

@@ -50,7 +50,7 @@ struct AllPosts: View {
 
 struct AllPosts_Previews: PreviewProvider {
     static var previews: some View {
-        AllPosts(premiumBS: .constant(.hidden), storeManager: StoreManager(), unlockAllPosts: false)
+        AllPosts(premiumBS: .constant(.hidden), storeManager: StoreManager(onPurchaseProduct: { _ in }), unlockAllPosts: false)
     }
 }
 

@@ -10,6 +10,7 @@ import Firebase
 import StoreKit
 
 struct SubscriptionProduct {
+    static let expirationKey = "subExpiration"
     let productID: String
     
     static let weeklySub = SubscriptionProduct(productID: "com.furkanbasoglu.crypon.blog.subscription.weekly")
@@ -22,7 +23,41 @@ struct CryponBlogApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 //    @StateObject private var vm = HomeViewModel()
     
-    @StateObject var storeManager = StoreManager()
+    @StateObject var storeManager = StoreManager(onPurchaseProduct: { product in
+        guard let subscriptionPeriod = product.subscriptionPeriod else {
+            print("Product not handled: \(product.productIdentifier)")
+            return
+        }
+        
+        // derive the expiration date and add one more day in case of offsets.
+        // every time a product is purchased or restored, the dereive expiration date would be recalculated.
+        let timeIntervalUnit: Double
+        let unit: Calendar.Component
+        let fallbackDays: Int
+        
+        switch subscriptionPeriod.unit {
+        case .month:
+            unit = .month
+            fallbackDays = 30
+          
+        default:
+            unit = .weekOfYear
+            fallbackDays = 7
+        }
+
+        let expirationDate: Date
+        if let derivedDate = Calendar.current.date(byAdding: unit, value: subscriptionPeriod.numberOfUnits, to: Date()), let derivedDateWithOffset =  Calendar.current.date(byAdding: .day, value: 1, to: derivedDate) {
+            
+            expirationDate = derivedDateWithOffset
+        } else {
+            assertionFailure("Derived date can not be made.")
+            expirationDate = Date().addingTimeInterval(Double(fallbackDays*86400*subscriptionPeriod.numberOfUnits))
+        }
+        
+        UserDefaults.standard.set(expirationDate.timeIntervalSince1970, forKey: SubscriptionProduct.expirationKey)
+    })
+    
+    
     @StateObject private var vm = HomeViewModel()
     @State private var showLaunchView: Bool = true
     
