@@ -15,37 +15,47 @@ struct PremiumView: View {
     @State var optionSelected = false
     
     var body: some View {
-        
-        Spacer()
-        RadioButtonGroups { package in
-            optionSelected = true
-            
-            if package == "months12" {
-                selectedPackage("12", "39.99")
-            } else {
-                selectedPackage("1", "12.99")
+        VStack(spacing: 8){
+            RadioButtonGroups { package in
+                optionSelected = true
+                
+                if package == "months12" {
+                    selectedPackage("12", "39.99")
+                } else {
+                    selectedPackage("1", "12.99")
+                }
             }
+            
+            Text("Access to crypto signals, pre-sale, airdrop, bitcoin analysis and lots of useful information.")
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.leading)
+                .padding(.trailing)
+            
+            BuyButton(){
+                selectedPremiumBS = .top
+            }
+            .buttonStyle(.plain)
+            .disabled(!optionSelected)
+            
+            
+            Text("Cancel anytime")
+            
+            Button("Restore Purchases", action: restorePurchases)
+                .foregroundColor(.blue)
+            
         }
-        
-        BuyButton(){
-            selectedPremiumBS = .top
-        }
-        .buttonStyle(.plain)
-        .disabled(!optionSelected)
-        
-        Text("Cancel anytime")
-        
-        Button("Restore Purchases", action: restorePurchases)
-            .foregroundColor(.blue)
-        
-        Spacer()
     }
 }
 
-//struct PremiumView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PremiumView(selectedPackage: { months in
-//
-//        }, selectedPremiumBS: .constant(.hidden))
-//    }
-//}
+struct PremiumView_Previews: PreviewProvider {
+    static var previews: some View {
+        PremiumView(restorePurchases: {}, selectedPackage: { months,
+            
+            
+            
+            
+            _  in
+
+        }, selectedPremiumBS: .constant(.hidden))
+    }
+}
