@@ -11,7 +11,7 @@ struct AllPosts: View {
     @EnvironmentObject var store: BlogPostsStore
     @Binding var premiumBS: BottomSheetPremium
     @StateObject var storeManager: StoreManager
-    var unlockAllPosts: Bool
+    let unlockAllPosts: Bool
     
     var body: some View {
         NavigationView {
