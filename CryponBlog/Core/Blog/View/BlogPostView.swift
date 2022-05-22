@@ -98,7 +98,7 @@ func removeBold(text: String) -> String {
 }
 
 struct BlogPostView_Previews: PreviewProvider {
-    static let placeholder = BlogPost(title: "This is a placeholder", subtitle: "A subtitle for the placeholder", image: URL(string: "https://media.nature.com/lw800/magazine-assets/d41586-020-03053-2/d41586-020-03053-2_18533904.jpg"), blogpost: "_Blog post_")
+    static let placeholder = BlogPost(id: "id placeholder", title: "This is a placeholder", subtitle: "A subtitle for the placeholder", image: URL(string: "https://media.nature.com/lw800/magazine-assets/d41586-020-03053-2/d41586-020-03053-2_18533904.jpg"), blogpost: "_Blog post_")
     
     static var previews: some View {
         BlogPostView(blogPost: placeholder)

@@ -8,7 +8,7 @@
 import Foundation
 
 struct BlogPost: Identifiable {
-    let id = UUID() // needed for using ForEach statement
+    let id: String
     
     var title: String
     var subtitle: String

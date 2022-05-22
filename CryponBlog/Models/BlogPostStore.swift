@@ -49,6 +49,7 @@ class BlogPostsStore: ObservableObject {
                 items.forEach {(item) in
                     self.blogPosts.append(
                         BlogPost(
+                            id: item.id,
                             title: item.fields["title"] as! String,
                             subtitle: item.fields["subtitle"] as! String,
                             image: item.fields.linkedAsset(at: "image")?.url ?? URL(string: ""),
