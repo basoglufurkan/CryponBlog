@@ -77,7 +77,7 @@
 		3DF9970527935A2500425E80 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9970427935A2500425E80 /* CoinImageViewModel.swift */; };
 		3DF997072793690800425E80 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF997062793690800425E80 /* LocalFileManager.swift */; };
 		3DF997092793799100425E80 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF997082793799100425E80 /* SearchBarView.swift */; };
-		C0665F7C2831524A00F8ECA4 /* ContentfulRichTextRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = C0665F7B2831524A00F8ECA4 /* ContentfulRichTextRenderer */; };
+		C03F2E8B283A8783005EDD7B /* ContentfulRichTextRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8A283A8783005EDD7B /* ContentfulRichTextRenderer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,7 +176,7 @@
 				3D94FEC12802DFD200413D95 /* BottomSheet in Frameworks */,
 				3D103614278ED45B0019AD60 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				3D103618278ED45B0019AD60 /* FirebaseMessaging in Frameworks */,
-				C0665F7C2831524A00F8ECA4 /* ContentfulRichTextRenderer in Frameworks */,
+				C03F2E8B283A8783005EDD7B /* ContentfulRichTextRenderer in Frameworks */,
 				3D10360A278ED2D00019AD60 /* Contentful in Frameworks */,
 				3D103616278ED45B0019AD60 /* FirebaseCrashlytics in Frameworks */,
 				3D103612278ED45B0019AD60 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
@@ -525,7 +525,7 @@
 				3D103617278ED45B0019AD60 /* FirebaseMessaging */,
 				3D103619278ED45B0019AD60 /* FirebasePerformance */,
 				3D94FEC02802DFD200413D95 /* BottomSheet */,
-				C0665F7B2831524A00F8ECA4 /* ContentfulRichTextRenderer */,
+				C03F2E8A283A8783005EDD7B /* ContentfulRichTextRenderer */,
 			);
 			productName = CryponBlog;
 			productReference = 3D1035DB278ECFC50019AD60 /* Crypon.app */;
@@ -604,7 +604,7 @@
 				3D10360B278ED32F0019AD60 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				3D10360E278ED45B0019AD60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3D94FEBF2802DFD100413D95 /* XCRemoteSwiftPackageReference "BottomSheet" */,
-				C0665F7A2831524A00F8ECA4 /* XCRemoteSwiftPackageReference "rich-text-renderer" */,
+				C03F2E89283A8783005EDD7B /* XCRemoteSwiftPackageReference "rich-text-renderer" */,
 			);
 			productRefGroup = 3D1035DC278ECFC50019AD60 /* Products */;
 			projectDirPath = "";
@@ -1074,12 +1074,12 @@
 				kind = branch;
 			};
 		};
-		C0665F7A2831524A00F8ECA4 /* XCRemoteSwiftPackageReference "rich-text-renderer" */ = {
+		C03F2E89283A8783005EDD7B /* XCRemoteSwiftPackageReference "rich-text-renderer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/contentful/rich-text-renderer.swift";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1130,9 +1130,9 @@
 			package = 3D94FEBF2802DFD100413D95 /* XCRemoteSwiftPackageReference "BottomSheet" */;
 			productName = BottomSheet;
 		};
-		C0665F7B2831524A00F8ECA4 /* ContentfulRichTextRenderer */ = {
+		C03F2E8A283A8783005EDD7B /* ContentfulRichTextRenderer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C0665F7A2831524A00F8ECA4 /* XCRemoteSwiftPackageReference "rich-text-renderer" */;
+			package = C03F2E89283A8783005EDD7B /* XCRemoteSwiftPackageReference "rich-text-renderer" */;
 			productName = ContentfulRichTextRenderer;
 		};
 /* End XCSwiftPackageProductDependency section */
