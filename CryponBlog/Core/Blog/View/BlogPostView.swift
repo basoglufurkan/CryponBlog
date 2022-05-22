@@ -11,6 +11,26 @@ import SDWebImageSwiftUI
 struct BlogPostView: View {
     
     var blogPost: BlogPost
+    let store = FirestoreManager()
+    
+    @State var viewCount: Int?
+    @State var uniqueViewCount: Int?
+    
+    var viewCountDisplay: String {
+        if let viewCount = viewCount, let uniqueViewCount = uniqueViewCount {
+            return "\(uniqueViewCount):\(viewCount)"
+        } else {
+            return "-:-"
+        }
+    }
+    
+    @ViewBuilder
+    var viewCountView: some View {
+        HStack {
+            Image(systemName: "eye")
+            Text(viewCountDisplay)
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -61,6 +81,11 @@ struct BlogPostView: View {
                 
             }
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem {
+                    viewCountView
+                }
+            }
         }
     }
 }
