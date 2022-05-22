@@ -78,6 +78,8 @@
 		3DF997072793690800425E80 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF997062793690800425E80 /* LocalFileManager.swift */; };
 		3DF997092793799100425E80 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF997082793799100425E80 /* SearchBarView.swift */; };
 		C03F2E8B283A8783005EDD7B /* ContentfulRichTextRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8A283A8783005EDD7B /* ContentfulRichTextRenderer */; };
+		C03F2E8D283A8A39005EDD7B /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F2E8C283A8A39005EDD7B /* FirestoreManager.swift */; };
+		C03F2E90283A8B4E005EDD7B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8F283A8B4E005EDD7B /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +166,7 @@
 		3DF9970427935A2500425E80 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		3DF997062793690800425E80 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		3DF997082793799100425E80 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		C03F2E8C283A8A39005EDD7B /* FirestoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		C0665F7628296AB800F8ECA4 /* Subscription.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subscription.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +184,7 @@
 				3D103616278ED45B0019AD60 /* FirebaseCrashlytics in Frameworks */,
 				3D103612278ED45B0019AD60 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				3D10361A278ED45B0019AD60 /* FirebasePerformance in Frameworks */,
+				C03F2E90283A8B4E005EDD7B /* FirebaseFirestore in Frameworks */,
 				3D103610278ED45B0019AD60 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +213,7 @@
 				3D1035EE278ECFCB0019AD60 /* CryponBlogTests */,
 				3D1035F8278ECFCB0019AD60 /* CryponBlogUITests */,
 				3D1035DC278ECFC50019AD60 /* Products */,
+				C03F2E8E283A8B4E005EDD7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,6 +284,7 @@
 				3D6C9E4127945582002EA140 /* MarketDataModel.swift */,
 				3D9C5F7F2796029C00D40F95 /* PortfolioContainer.xcdatamodeld */,
 				3D94FEB12802DD7E00413D95 /* StoreManager.swift */,
+				C03F2E8C283A8A39005EDD7B /* FirestoreManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -499,6 +505,13 @@
 			path = CoinImage;
 			sourceTree = "<group>";
 		};
+		C03F2E8E283A8B4E005EDD7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,6 +539,7 @@
 				3D103619278ED45B0019AD60 /* FirebasePerformance */,
 				3D94FEC02802DFD200413D95 /* BottomSheet */,
 				C03F2E8A283A8783005EDD7B /* ContentfulRichTextRenderer */,
+				C03F2E8F283A8B4E005EDD7B /* FirebaseFirestore */,
 			);
 			productName = CryponBlog;
 			productReference = 3D1035DB278ECFC50019AD60 /* Crypon.app */;
@@ -671,6 +685,7 @@
 				3D10362B278ED7A40019AD60 /* BlogPostStore.swift in Sources */,
 				3D94FEC32802F72600413D95 /* BlogPostCardLocked.swift in Sources */,
 				3D94FEBC2802DE4100413D95 /* BuyButton.swift in Sources */,
+				C03F2E8D283A8A39005EDD7B /* FirestoreManager.swift in Sources */,
 				3D6C9E3C27944C82002EA140 /* StatisticModel.swift in Sources */,
 				3DF996FD27934A9300425E80 /* NetworkingManager.swift in Sources */,
 				3D9F107D27920F47003A1D1B /* CircleButtonAnimationView.swift in Sources */,
@@ -1134,6 +1149,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C03F2E89283A8783005EDD7B /* XCRemoteSwiftPackageReference "rich-text-renderer" */;
 			productName = ContentfulRichTextRenderer;
+		};
+		C03F2E8F283A8B4E005EDD7B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D10360E278ED45B0019AD60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 
