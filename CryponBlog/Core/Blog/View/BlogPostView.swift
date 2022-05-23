@@ -33,6 +33,30 @@ struct BlogPostView: View {
         }
     }
     
+    @ViewBuilder
+    var content: some View {
+        if let content = blogPost.content {
+            RichTextView(content: content)
+        } else {
+            if blogPost.blogpost.hasPrefix("_") && blogPost.blogpost.hasSuffix("_") {
+                
+                Text(removeBold(text:blogPost.blogpost))
+                    .multilineTextAlignment(.leading)
+                    .font(.system(size: 14, weight: .bold, design: .default))
+                    .foregroundColor(Color.primary.opacity(0.9))
+                    .padding(.bottom, 25)
+                    .frame(maxWidth: .infinity)
+            } else {
+                Text(blogPost.blogpost)
+                    .multilineTextAlignment(.leading)
+                    .font(.body)
+                    .foregroundColor(Color.primary.opacity(0.9))
+                    .padding(.bottom, 25)
+                    .frame(maxWidth: .infinity)
+            }
+        }
+    }
+    
     var body: some View {
         ZStack {
             ScrollView {
@@ -57,22 +81,7 @@ struct BlogPostView: View {
                         }
                         .frame(maxWidth: .infinity)
                         
-                        if blogPost.blogpost.hasPrefix("_") && blogPost.blogpost.hasSuffix("_") {
-                            
-                            Text(removeBold(text:blogPost.blogpost))
-                                .multilineTextAlignment(.leading)
-                                .font(.system(size: 14, weight: .bold, design: .default))
-                                .foregroundColor(Color.primary.opacity(0.9))
-                                .padding(.bottom, 25)
-                                .frame(maxWidth: .infinity)
-                        }else {
-                            Text(blogPost.blogpost)
-                                .multilineTextAlignment(.leading)
-                                .font(.body)
-                                .foregroundColor(Color.primary.opacity(0.9))
-                                .padding(.bottom, 25)
-                                .frame(maxWidth: .infinity)
-                        }
+                        content
                     }
                     .padding(.horizontal, 20)
                     
