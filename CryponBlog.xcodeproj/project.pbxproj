@@ -80,6 +80,7 @@
 		C03F2E8B283A8783005EDD7B /* ContentfulRichTextRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8A283A8783005EDD7B /* ContentfulRichTextRenderer */; };
 		C03F2E8D283A8A39005EDD7B /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F2E8C283A8A39005EDD7B /* FirestoreManager.swift */; };
 		C03F2E90283A8B4E005EDD7B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8F283A8B4E005EDD7B /* FirebaseFirestore */; };
+		C03F2E92283B340C005EDD7B /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F2E91283B340C005EDD7B /* RichTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		3DF997062793690800425E80 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		3DF997082793799100425E80 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		C03F2E8C283A8A39005EDD7B /* FirestoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		C03F2E91283B340C005EDD7B /* RichTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
 		C0665F7628296AB800F8ECA4 /* Subscription.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subscription.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -344,6 +346,7 @@
 				3DF997082793799100425E80 /* SearchBarView.swift */,
 				3D9C5F7B2795FD1900D40F95 /* XMarkButton.swift */,
 				3D6C9E3D27944D47002EA140 /* StatisticView.swift */,
+				C03F2E91283B340C005EDD7B /* RichTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				3DE5900E27A97020007C4887 /* String.swift in Sources */,
 				3D9C5F7C2795FD1900D40F95 /* XMarkButton.swift in Sources */,
 				3D10362B278ED7A40019AD60 /* BlogPostStore.swift in Sources */,
+				C03F2E92283B340C005EDD7B /* RichTextView.swift in Sources */,
 				3D94FEC32802F72600413D95 /* BlogPostCardLocked.swift in Sources */,
 				3D94FEBC2802DE4100413D95 /* BuyButton.swift in Sources */,
 				C03F2E8D283A8A39005EDD7B /* FirestoreManager.swift in Sources */,
