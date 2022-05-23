@@ -127,7 +127,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
 
         application.registerForRemoteNotifications()
-
+        
+        // Force link text in text view to be blue
+        UITextView.appearance().linkTextAttributes = [.foregroundColor: UIColor.systemBlue ]
         
         return true
     }
