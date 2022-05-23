@@ -54,6 +54,7 @@ class BlogPostsStore: ObservableObject {
                             subtitle: item.fields["subtitle"] as! String,
                             image: item.fields.linkedAsset(at: "image")?.url ?? URL(string: ""),
                             blogpost: item.fields["blogpost"] as? String ?? "",
+                            content: item.fields["content"] as? RichTextDocument,
                             featured: item.fields["featured"] as? Bool ?? false
                         )
                     )

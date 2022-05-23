@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Contentful
 
 struct BlogPost: Identifiable {
     let id: String
@@ -14,6 +15,7 @@ struct BlogPost: Identifiable {
     var subtitle: String
     var image: URL?
     var blogpost: String
+    let content: RichTextDocument?
     var featured = false
 }
 
