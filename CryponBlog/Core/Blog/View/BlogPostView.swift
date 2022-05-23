@@ -15,6 +15,7 @@ struct BlogPostView: View {
     
     @State var viewCount: Int?
     @State var uniqueViewCount: Int?
+    @State var isFirstAppear = true
     
     var viewCountDisplay: String {
         if let viewCount = viewCount, let uniqueViewCount = uniqueViewCount {
@@ -86,6 +87,41 @@ struct BlogPostView: View {
                     viewCountView
                 }
             }
+        }
+        .onAppear {
+            if isFirstAppear {
+                isFirstAppear = false
+                
+                Task {
+                    await incrementViewCount()
+                    await requestViewCount()
+                }
+            }
+        }
+    }
+    
+    private func incrementViewCount() async {
+        let writeError = await store.incrementPostViewCount(postID: blogPost.id, postTitle: blogPost.title)
+        if let error = writeError {
+            print("Date: \(Date()), File: \(#filePath), Line: \(#line), Func: \(#function) --error when incrementPostViewCount-\(error)----")
+        }
+    }
+    
+    private func requestViewCount() async {
+        let viewCountResult = await store.getPostViewCount(for: blogPost.id)
+        switch viewCountResult {
+        case .success(let count):
+            self.viewCount = count
+        case .failure(let error):
+            print("Date: \(Date()), File: \(#filePath), Line: \(#line), Func: \(#function) --error when getPostViewCount-\(error)----")
+        }
+        
+        let uniqueViewCountResult = await store.getUniquePostViewCount(for: blogPost.id)
+        switch uniqueViewCountResult {
+        case .success(let count):
+            self.uniqueViewCount = count
+        case .failure(let error):
+            print("Date: \(Date()), File: \(#filePath), Line: \(#line), Func: \(#function) --error when getPostViewCount-\(error)----")
         }
     }
 }
