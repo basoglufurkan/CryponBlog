@@ -7,7 +7,7 @@
 
 import FirebaseFirestore
 
-enum FirestoreKeys {
+private enum FirestoreKeys {
     enum Collection {
         static let posts = "posts"
     }

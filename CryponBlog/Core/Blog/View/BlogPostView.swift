@@ -11,13 +11,13 @@ import SDWebImageSwiftUI
 struct BlogPostView: View {
     
     var blogPost: BlogPost
-    let store = FirestoreManager()
+    private let store = FirestoreManager()
     
-    @State var viewCount: Int?
-    @State var uniqueViewCount: Int?
-    @State var isFirstAppear = true
+    @State private var viewCount: Int?
+    @State private var uniqueViewCount: Int?
+    @State private var isFirstAppear = true
     
-    var viewCountDisplay: String {
+    private var viewCountDisplay: String {
         if let viewCount = viewCount, let uniqueViewCount = uniqueViewCount {
             return "\(uniqueViewCount):\(viewCount)"
         } else {
@@ -26,7 +26,7 @@ struct BlogPostView: View {
     }
     
     @ViewBuilder
-    var viewCountView: some View {
+    private var viewCountView: some View {
         HStack {
             Image(systemName: "eye")
             Text(viewCountDisplay)
@@ -34,7 +34,7 @@ struct BlogPostView: View {
     }
     
     @ViewBuilder
-    var content: some View {
+    private var content: some View {
         if let content = blogPost.content {
             RichTextView(content: content)
         } else {
