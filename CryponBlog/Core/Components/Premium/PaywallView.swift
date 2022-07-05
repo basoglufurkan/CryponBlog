@@ -60,12 +60,14 @@ struct PaywallView: View {
                     
                     HStack {
                         FooterNoteButton(title: "Privacy Policy") {
+                            UIApplication.shared.open(AppConfig.privacyURL)
                         }
                         Spacer()
                         FooterNoteButton(title: "Restore") {
                         }
                         Spacer()
                         FooterNoteButton(title: "Terms of Use") {
+                            UIApplication.shared.open(AppConfig.tosURL)
                         }
                     }
                     .frame(maxWidth: .infinity)
