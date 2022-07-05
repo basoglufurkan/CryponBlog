@@ -82,6 +82,7 @@
 		C03F2E90283A8B4E005EDD7B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8F283A8B4E005EDD7B /* FirebaseFirestore */; };
 		C03F2E92283B340C005EDD7B /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F2E91283B340C005EDD7B /* RichTextView.swift */; };
 		C085F1D7286FED960013EE66 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F1D6286FED960013EE66 /* PaywallView.swift */; };
+		C0F87B282874780900FAD60C /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F87B272874780900FAD60C /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		C03F2E91283B340C005EDD7B /* RichTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
 		C0665F7628296AB800F8ECA4 /* Subscription.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subscription.storekit; sourceTree = "<group>"; };
 		C085F1D6286FED960013EE66 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		C0F87B272874780900FAD60C /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				3D9F107427920EA0003A1D1B /* Core */,
 				3D1035DE278ECFC50019AD60 /* CryponBlogApp.swift */,
 				3D1035E0278ECFC50019AD60 /* ContentView.swift */,
+				C0F87B272874780900FAD60C /* AppConfig.swift */,
 				C0665F7628296AB800F8ECA4 /* Subscription.storekit */,
 				3D1035E2278ECFCA0019AD60 /* Assets.xcassets */,
 				3D1035E4278ECFCA0019AD60 /* Preview Content */,
@@ -677,6 +680,7 @@
 				3DF996FA27933B2A00425E80 /* CoinDataServices.swift in Sources */,
 				3D94FEB62802DDE000413D95 /* RadioButtonField.swift in Sources */,
 				3D94FEBA2802DE2200413D95 /* PremiumView.swift in Sources */,
+				C0F87B282874780900FAD60C /* AppConfig.swift in Sources */,
 				3DF996F72793129700425E80 /* HomeViewModel.swift in Sources */,
 				3D9F108227920FBC003A1D1B /* CoinRowView.swift in Sources */,
 				3DF9970527935A2500425E80 /* CoinImageViewModel.swift in Sources */,

@@ -9,14 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    let defaultURL = URL(string: "https://www.google.com")!
-    let instagramURL = URL(string: "https://www.instagram.com/coin.agent")!
-    let twitterURL = URL(string: "https://twitter.com/CryponApp")!
-    let coingeckoURL = URL(string: "https://www.coingecko.com")!
-    let personalURL = URL(string: "furkan.basoglu@hotmail.com")!
-    let privacyURL = URL(string: "https://sites.google.com/view/cryponprivacypolicy/ana-sayfa")!
-    let tosURL = URL(string: "https://sites.google.com/view/crypontermsconditions/ana-sayfa")!
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -73,8 +65,8 @@ extension SettingsView {
                     .foregroundColor(Color.theme.accent)
             }
             .padding(.vertical)
-            Link("Instagram 🥳", destination: instagramURL)
-            Link("Twitter 🥳", destination: twitterURL)
+            Link("Instagram 🥳", destination: AppConfig.instagramURL)
+            Link("Twitter 🥳", destination: AppConfig.twitterURL)
         }
     }
     
@@ -115,8 +107,8 @@ extension SettingsView {
     
     private var applicationSection: some View {
         Section(header: Text("Application")) {
-            Link("Terms of Service", destination: tosURL)
-            Link("Privacy Policy", destination: privacyURL)
+            Link("Terms of Service", destination: AppConfig.tosURL)
+            Link("Privacy Policy", destination: AppConfig.privacyURL)
             //Link("Company Website", destination: defaultURL)
             //Link("Learn More", destination: personalURL)
         }
