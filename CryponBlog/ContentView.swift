@@ -34,8 +34,7 @@ struct ContentView: View {
         )
     }
     
-    @AppStorage(SubscriptionProduct.expirationKey) private var expirationTime: TimeInterval = 0
-    private var hasValidSubscription: Bool { expirationTime > Date().timeIntervalSince1970 }
+    let subscriptionActive: Bool
     
     var body: some View {
         
@@ -62,7 +61,7 @@ struct ContentView: View {
 //                    Text("Store")
 //                }
             
-            AllPosts( premiumBS: $premiumBottomSheetPosition, storeManager: storeManager, unlockAllPosts: hasValidSubscription)
+            AllPosts( premiumBS: $premiumBottomSheetPosition, storeManager: storeManager, unlockAllPosts: subscriptionActive)
                 .environmentObject(store)
                 .navigationBarHidden(true)
                 .tabItem {
