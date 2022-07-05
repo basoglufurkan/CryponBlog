@@ -64,6 +64,9 @@ struct PaywallView: View {
                         }
                         Spacer()
                         FooterNoteButton(title: "Restore") {
+                            presentationMode.wrappedValue.dismiss()
+                            
+                            storeManager.restorePurchases { _ in }
                         }
                         Spacer()
                         FooterNoteButton(title: "Terms of Use") {
