@@ -81,6 +81,7 @@
 		C03F2E8D283A8A39005EDD7B /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F2E8C283A8A39005EDD7B /* FirestoreManager.swift */; };
 		C03F2E90283A8B4E005EDD7B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8F283A8B4E005EDD7B /* FirebaseFirestore */; };
 		C03F2E92283B340C005EDD7B /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F2E91283B340C005EDD7B /* RichTextView.swift */; };
+		C085F1D7286FED960013EE66 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F1D6286FED960013EE66 /* PaywallView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		C03F2E8C283A8A39005EDD7B /* FirestoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		C03F2E91283B340C005EDD7B /* RichTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
 		C0665F7628296AB800F8ECA4 /* Subscription.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subscription.storekit; sourceTree = "<group>"; };
+		C085F1D6286FED960013EE66 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 				3D94FEB92802DE2200413D95 /* PremiumView.swift */,
 				3D94FEBB2802DE4100413D95 /* BuyButton.swift */,
 				3D94FEBD2802DE7C00413D95 /* SelectedPremiumView.swift */,
+				C085F1D6286FED960013EE66 /* PaywallView.swift */,
 			);
 			path = Premium;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				3DF996F72793129700425E80 /* HomeViewModel.swift in Sources */,
 				3D9F108227920FBC003A1D1B /* CoinRowView.swift in Sources */,
 				3DF9970527935A2500425E80 /* CoinImageViewModel.swift in Sources */,
+				C085F1D7286FED960013EE66 /* PaywallView.swift in Sources */,
 				3D6A9FD727A5E46000E9407E /* HapticManager.swift in Sources */,
 				3D9C5F7E2795FE2200D40F95 /* CoinLogoView.swift in Sources */,
 				3D103620278ED5F10019AD60 /* BlogPostCardMain.swift in Sources */,

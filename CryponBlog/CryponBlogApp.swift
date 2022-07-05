@@ -60,6 +60,9 @@ struct CryponBlogApp: App {
     
     @StateObject private var vm = HomeViewModel()
     @State private var showLaunchView: Bool = true
+    @State private var presentPaywall = false
+    @AppStorage(SubscriptionProduct.expirationKey) private var expirationTime: TimeInterval = 0
+    private var hasValidSubscription: Bool { expirationTime > Date().timeIntervalSince1970 }
     
     let productIDs = [
         //Use your product IDs instead
@@ -82,10 +85,19 @@ struct CryponBlogApp: App {
                         SKPaymentQueue.default().add(storeManager)
                         storeManager.getProducts(productIDs: productIDs)
                     })
+                    .fullScreenCover(isPresented: $presentPaywall) {
+                        PaywallView(storeManager: storeManager)
+                    }
                 ZStack {
                     if showLaunchView {
                         LaunchView(showLaunchView: $showLaunchView)
                             .transition(.move(edge: .leading))
+                            .onDisappear {
+                                // show paywall for non-subscriber after launch view disappear
+                                if !hasValidSubscription {
+                                    presentPaywall = true
+                                }
+                            }
                     }
                 }
                 .zIndex(2.0)
