@@ -42,7 +42,7 @@ struct PaywallView: View {
                     Image("clogoseffaf")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 300, height: 300)
+                        .frame(width: 250, height: 250)
                     Text("Get access to our private signals and become rich with us!")
                         .font(.title3)
                         .bold()
@@ -52,15 +52,17 @@ struct PaywallView: View {
                         PackageCellView(package: .weeklyPackage, color: .cyan, isSelected: selectedPackage == .weeklyPackage) {
                             selectedPackage = .weeklyPackage
                         }
-                        .padding(.bottom)
+                        .frame(maxHeight: 80)
+                        .padding([.top, .bottom])
                         PackageCellView(package: .monthlyPackage, color: .lightGreen, isSelected: selectedPackage == .monthlyPackage) {
                             selectedPackage = .monthlyPackage
                         }
+                        .frame(maxHeight: 80)
                     }
                   
                     Spacer()
                     
-                    SubscribeButton {
+                    SubscriptionButton {
                         presentationMode.wrappedValue.dismiss()
                         
                         if let package = selectedPackage, let product = storeManager.myProducts.first(where: { $0.productIdentifier == package.productID })  {
@@ -93,8 +95,9 @@ struct PaywallView: View {
             Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
-                Label("Close", systemImage: "xmark.circle.fill")
-                    .labelStyle(.iconOnly)
+                Image(systemName: "xmark.circle.fill")
+                    .resizable()
+                    .frame(width: 24, height: 24)
             }
             .foregroundColor(.white)
             .opacity(0.8)
@@ -118,7 +121,7 @@ struct FooterNoteButton: View {
     }
 }
 
-struct SubscribeButton: View {
+struct SubscriptionButton: View {
     let onTap: () -> Void
     
     private let clipShape = RoundedRectangle(cornerRadius: 16)
@@ -136,16 +139,15 @@ struct SubscribeButton: View {
                     .frame(width: 8, height: 8)
                     .foregroundColor(.cyan)
             }
+            .frame(maxWidth: .infinity, minHeight: 60)
+            .contentShape(Rectangle())
         }
-        .padding()
-        .frame(maxWidth: .infinity)
         .overlay(clipShape.stroke(Color.cyan, lineWidth: 1))
         .background(
             clipShape
                 .foregroundColor(.gray)
                 .opacity(0.3)
         )
-        .contentShape(Rectangle())
     }
 }
 
@@ -159,13 +161,15 @@ struct PackageCellView: View {
         let splits = package.price.split(separator: ".")
         
         let text = Text(splits[0])
-            .font(.headline)
+            .font(.title3)
+            .fontWeight(.heavy)
             .foregroundColor(.cyan)
         
         if splits.count == 2 {
             return text +
             Text("."+splits[1])
-                .font(.headline)
+                .font(.title3)
+                .fontWeight(.heavy)
                 .foregroundColor(.gray)
         } else {
             return text
@@ -177,11 +181,10 @@ struct PackageCellView: View {
             ZStack(alignment: .bottomTrailing) {
                 HStack(alignment: .top) {
                     Image(systemName: isSelected ? "circle.inset.filled" : "circle")
-                        .foregroundColor(.white)
+                        .foregroundColor(isSelected ? .white : .gray)
                     
                     VStack(alignment: .leading) {
                         Text(package.title)
-                            .font(.title3)
                             .foregroundColor(.white)
                         Text(package.description)
                             .font(.footnote)
@@ -194,14 +197,14 @@ struct PackageCellView: View {
                     
                 }
                 .padding()
+                .frame(width: geometry.size.width, height: geometry.size.height)
                 .overlay(RoundedRectangle(cornerSize: .init(width: 16, height: 16)).stroke(color, lineWidth: 2))
                 
                 PromptBanner(title: package.prompt, color: color, radius: 16)
-                    .frame(width: 120, height: 28)
+                    .frame(width: 100, height: 24)
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
-        .frame(height: 100)
         .contentShape(Rectangle())
         .onTapGesture(perform: onTap)
     }
@@ -215,20 +218,31 @@ struct PromptBanner: View {
     var body: some View {
         ZStack {
             color
-                .clipShape(RoundedCorner(radius: radius, corners: [.topLeft, .bottomRight]))
+                .clipShape(PartialRoundedCorner(radius: radius))
             Text(title)
+                .font(.caption)
                 .bold()
         }
     }
 }
 
-struct RoundedCorner: Shape {
-    var radius: CGFloat = 16
-    var corners: UIRectCorner = .allCorners
+struct PartialRoundedCorner: Shape {
+    let radius: CGFloat
     
     func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: .init(width: radius, height: radius))
-        return Path(path.cgPath)
+        var p = Path()
+        
+        let width = rect.width
+        let height = rect.height
+        
+        p.move(to: .init(x: 0, y: height))
+        p.addLine(to: .init(x: 0, y: radius))
+        p.addArc(center: .init(x: radius, y: radius), radius: radius, startAngle: .degrees(180), endAngle: .degrees(270), clockwise: false)
+        p.addLine(to: .init(x: width, y: 0))
+        p.addLine(to: .init(x: width, y: height-radius))
+        p.addArc(center: .init(x: width-radius, y: height-radius), radius: radius, startAngle: .degrees(0), endAngle: .degrees(90), clockwise: false)
+        
+        return p
     }
 }
 
