@@ -28,7 +28,7 @@ struct PaywallView: View {
     @State private var selectedPackage: Package?
     @Environment(\.presentationMode) var presentationMode
     
-    let storeManager: StoreManager
+    @ObservedObject private(set) var storeManager: StoreManager
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -47,13 +47,16 @@ struct PaywallView: View {
                         .bold()
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                    PackageCellView(package: .weeklyPackage, color: .cyan, isSelected: selectedPackage == .weeklyPackage) {
-                        selectedPackage = .weeklyPackage
+                    if !storeManager.myProducts.isEmpty {
+                        PackageCellView(package: .weeklyPackage, color: .cyan, isSelected: selectedPackage == .weeklyPackage) {
+                            selectedPackage = .weeklyPackage
+                        }
+                        .padding(.bottom)
+                        PackageCellView(package: .monthlyPackage, color: .green, isSelected: selectedPackage == .monthlyPackage) {
+                            selectedPackage = .monthlyPackage
+                        }
                     }
-                    .padding(.bottom)
-                    PackageCellView(package: .monthlyPackage, color: .green, isSelected: selectedPackage == .monthlyPackage) {
-                        selectedPackage = .monthlyPackage
-                    }
+                  
                     Spacer()
                     
                     SubscribeButton {
