@@ -13,13 +13,14 @@ extension Color {
 }
 
 struct Package: Equatable {
+    let productID: String
     let title: String
     let description: String
     let prompt: String
     let price: String
     
-    static let weeklyPackage = Package(title: "Weekly", description: "Try making money", prompt: "First steps", price: "$49.99")
-    static let monthlyPackage = Package(title: "Monthly", description: "Pay less, get more", prompt: "Best price", price: "$799.99")
+    static let weeklyPackage = Package(productID: SubscriptionProduct.weeklySub.productID, title: "Weekly", description: "Try making money", prompt: "First steps", price: "$49.99")
+    static let monthlyPackage = Package(productID: SubscriptionProduct.monthlySub.productID, title: "Monthly", description: "Pay less, get more", prompt: "Best price", price: "$799.99")
 }
 
 
@@ -56,6 +57,11 @@ struct PaywallView: View {
                     Spacer()
                     
                     SubscribeButton {
+                        presentationMode.wrappedValue.dismiss()
+                        
+                        if let package = selectedPackage, let product = storeManager.myProducts.first(where: { $0.productIdentifier == package.productID })  {
+                            storeManager.purchaseProduct(product: product)
+                        }
                     }
                     
                     HStack {
@@ -93,6 +99,7 @@ struct PaywallView: View {
         .onAppear {
             selectedPackage = .weeklyPackage
         }
+        .animation(.easeInOut)
     }
 }
 
