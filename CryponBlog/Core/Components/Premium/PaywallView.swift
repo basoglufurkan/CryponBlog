@@ -8,8 +8,9 @@
 import SwiftUI
 import Contentful
 
-extension Color {
-    static let cyan = Color(.displayP3, red: 53, green: 221, blue: 242, opacity: 1)
+private extension Color {
+    static let cyan = Color(.displayP3, red: 53, green: 221, blue: 242)
+    static let lightGreen = Color(.displayP3, red: 59, green: 242, blue: 80)
 }
 
 struct Package: Equatable {
@@ -52,7 +53,7 @@ struct PaywallView: View {
                             selectedPackage = .weeklyPackage
                         }
                         .padding(.bottom)
-                        PackageCellView(package: .monthlyPackage, color: .green, isSelected: selectedPackage == .monthlyPackage) {
+                        PackageCellView(package: .monthlyPackage, color: .lightGreen, isSelected: selectedPackage == .monthlyPackage) {
                             selectedPackage = .monthlyPackage
                         }
                     }
