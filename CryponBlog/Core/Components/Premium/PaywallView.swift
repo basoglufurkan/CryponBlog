@@ -6,30 +6,33 @@
 //
 
 import SwiftUI
-import Contentful
+import StoreKit
 
-private extension Color {
-    static let cyan = Color(.displayP3, red: 53, green: 221, blue: 242)
-    static let lightGreen = Color(.displayP3, red: 59, green: 242, blue: 80)
-}
-
-struct Package: Equatable {
+struct Package: Equatable, Hashable {
     let productID: String
     let title: String
     let description: String
     let prompt: String
     let price: String
+    let color: Color
     
-    static let weeklyPackage = Package(productID: SubscriptionProduct.weeklySub.productID, title: "Weekly", description: "Try making money", prompt: "First steps", price: "$49.99")
-    static let monthlyPackage = Package(productID: SubscriptionProduct.monthlySub.productID, title: "Monthly", description: "Pay less, get more", prompt: "Best price", price: "$799.99")
+    init(product: SKProduct) {
+        let isWeeklyProduct = product.productIdentifier == SubscriptionProduct.weeklySub.productID
+        productID = product.productIdentifier
+        title = isWeeklyProduct ? "Weekly" : "Monthly"
+        description = isWeeklyProduct ? "Try making money" : "Pay less, get more"
+        prompt = isWeeklyProduct ? "First steops" : "Best price"
+        price = product.localizedPrice ?? product.price.description
+        color = isWeeklyProduct ? .cyan : .lightGreen
+    }
 }
 
-
 struct PaywallView: View {
-    @State private var selectedPackage: Package?
+    @State private var selectedProductID = SubscriptionProduct.weeklySub.productID
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject private(set) var storeManager: StoreManager
+    private var packages: [Package] { storeManager.myProducts.map(Package.init) }
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -48,24 +51,20 @@ struct PaywallView: View {
                         .bold()
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                    if !storeManager.myProducts.isEmpty {
-                        PackageCellView(package: .weeklyPackage, color: .cyan, isSelected: selectedPackage == .weeklyPackage) {
-                            selectedPackage = .weeklyPackage
+                    ForEach(packages, id: \.self) { package in
+                        PackageCellView(package: package, color: package.color, isSelected: selectedProductID == package.productID) {
+                            selectedProductID = package.productID
                         }
                         .frame(maxHeight: 80)
-                        .padding([.top, .bottom])
-                        PackageCellView(package: .monthlyPackage, color: .lightGreen, isSelected: selectedPackage == .monthlyPackage) {
-                            selectedPackage = .monthlyPackage
-                        }
-                        .frame(maxHeight: 80)
+                        .padding([.top])
                     }
-                  
+
                     Spacer()
                     
                     SubscriptionButton {
                         presentationMode.wrappedValue.dismiss()
                         
-                        if let package = selectedPackage, let product = storeManager.myProducts.first(where: { $0.productIdentifier == package.productID })  {
+                        if let product = storeManager.myProducts.first(where: { $0.productIdentifier == selectedProductID })  {
                             storeManager.purchaseProduct(product: product)
                         }
                     }
@@ -102,9 +101,6 @@ struct PaywallView: View {
             .foregroundColor(.white)
             .opacity(0.8)
             .padding()
-        }
-        .onAppear {
-            selectedPackage = .weeklyPackage
         }
         .animation(.easeInOut)
     }
@@ -250,4 +246,18 @@ struct PaywallView_Previews: PreviewProvider {
     static var previews: some View {
         PaywallView(storeManager: StoreManager(onPurchaseProduct: { _ in }))
     }
+}
+
+private extension SKProduct {
+    var localizedPrice: String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = priceLocale
+        return formatter.string(from: price)
+    }
+}
+
+private extension Color {
+    static let cyan = Color(.displayP3, red: 53, green: 221, blue: 242)
+    static let lightGreen = Color(.displayP3, red: 59, green: 242, blue: 80)
 }
