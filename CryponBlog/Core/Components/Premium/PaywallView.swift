@@ -16,15 +16,28 @@ struct Package: Equatable, Hashable {
     let price: String
     let color: Color
     
-    init(product: SKProduct) {
-        let isWeeklyProduct = product.productIdentifier == SubscriptionProduct.weeklySub.productID
-        productID = product.productIdentifier
-        title = isWeeklyProduct ? "Weekly" : "Monthly"
-        description = isWeeklyProduct ? "Try making money" : "Pay less, get more"
-        prompt = isWeeklyProduct ? "First steops" : "Best price"
-        price = product.localizedPrice ?? product.price.description
-        color = isWeeklyProduct ? .cyan : .lightGreen
+    init(productID: String, title: String, description: String, prompt: String, price: String, color: Color) {
+        self.productID = productID
+        self.title = title
+        self.description = description
+        self.prompt = prompt
+        self.price = price
+        self.color = color
     }
+    
+    static var weeklyPackage: Package { .init(productID: SubscriptionProduct.weeklySub.productID,
+                                              title: "Weekly",
+                                              description: "Try making money",
+                                              prompt: "First steops",
+                                              price: UserDefaults.standard.string(forKey: SubscriptionProduct.weeklySub.productID) ?? "$12.99",
+                                              color: .cyan) }
+    
+    static var monthlyPackage: Package { .init(productID: SubscriptionProduct.monthlySub.productID,
+                                               title: "Monthly",
+                                               description: "Pay less, get more",
+                                               prompt: "Best price",
+                                               price: UserDefaults.standard.string(forKey: SubscriptionProduct.monthlySub.productID) ?? "$39.99",
+                                               color: .lightGreen) }
 }
 
 struct PaywallView: View {
@@ -32,7 +45,7 @@ struct PaywallView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject private(set) var storeManager: StoreManager
-    private var packages: [Package] { storeManager.myProducts.map(Package.init) }
+    @State private var packages: [Package] = [.weeklyPackage, .monthlyPackage]
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -103,6 +116,15 @@ struct PaywallView: View {
             .padding()
         }
         .animation(.easeInOut)
+        .onChange(of: storeManager.myProducts) { products in
+            print("did change store Manager")
+            
+            // update price from App Store
+            products.forEach {
+                UserDefaults.standard.set($0.localizedPrice, forKey: $0.productIdentifier)
+            }
+            packages = [.weeklyPackage, .monthlyPackage]
+        }
     }
 }
 
