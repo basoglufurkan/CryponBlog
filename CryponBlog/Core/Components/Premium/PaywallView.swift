@@ -28,7 +28,7 @@ struct Package: Equatable, Hashable {
     static var weeklyPackage: Package { .init(productID: SubscriptionProduct.weeklySub.productID,
                                               title: "Weekly",
                                               description: "Try making money",
-                                              prompt: "First steops",
+                                              prompt: "First steps",
                                               price: UserDefaults.standard.string(forKey: SubscriptionProduct.weeklySub.productID) ?? "$12.99",
                                               color: .cyan) }
     
