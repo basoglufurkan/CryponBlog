@@ -82,6 +82,7 @@
 		C03F2E90283A8B4E005EDD7B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C03F2E8F283A8B4E005EDD7B /* FirebaseFirestore */; };
 		C03F2E92283B340C005EDD7B /* RichTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F2E91283B340C005EDD7B /* RichTextView.swift */; };
 		C085F1D7286FED960013EE66 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F1D6286FED960013EE66 /* PaywallView.swift */; };
+		C0A60B8B288FB191003F3042 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A60B8A288FB191003F3042 /* Package.swift */; };
 		C0F87B282874780900FAD60C /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F87B272874780900FAD60C /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +174,7 @@
 		C03F2E91283B340C005EDD7B /* RichTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextView.swift; sourceTree = "<group>"; };
 		C0665F7628296AB800F8ECA4 /* Subscription.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subscription.storekit; sourceTree = "<group>"; };
 		C085F1D6286FED960013EE66 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		C0A60B8A288FB191003F3042 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		C0F87B272874780900FAD60C /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +306,7 @@
 				3D94FEBB2802DE4100413D95 /* BuyButton.swift */,
 				3D94FEBD2802DE7C00413D95 /* SelectedPremiumView.swift */,
 				C085F1D6286FED960013EE66 /* PaywallView.swift */,
+				C0A60B8A288FB191003F3042 /* Package.swift */,
 			);
 			path = Premium;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				3DF996F72793129700425E80 /* HomeViewModel.swift in Sources */,
 				3D9F108227920FBC003A1D1B /* CoinRowView.swift in Sources */,
 				3DF9970527935A2500425E80 /* CoinImageViewModel.swift in Sources */,
+				C0A60B8B288FB191003F3042 /* Package.swift in Sources */,
 				C085F1D7286FED960013EE66 /* PaywallView.swift in Sources */,
 				3D6A9FD727A5E46000E9407E /* HapticManager.swift in Sources */,
 				3D9C5F7E2795FE2200D40F95 /* CoinLogoView.swift in Sources */,

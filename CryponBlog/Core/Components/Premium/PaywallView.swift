@@ -8,38 +8,6 @@
 import SwiftUI
 import StoreKit
 
-struct Package: Equatable, Hashable {
-    let productID: String
-    let title: String
-    let description: String
-    let prompt: String
-    var price: String
-    let color: Color
-    
-    init(productID: String, title: String, description: String, prompt: String, price: String, color: Color) {
-        self.productID = productID
-        self.title = title
-        self.description = description
-        self.prompt = prompt
-        self.price = price
-        self.color = color
-    }
-    
-    static let weeklyPackage: Package = .init(productID: SubscriptionProduct.weeklySub.productID,
-                                              title: "Weekly",
-                                              description: "Try making money",
-                                              prompt: "First steps",
-                                              price: "$12.99",
-                                              color: .cyan)
-    
-    static let monthlyPackage: Package = .init(productID: SubscriptionProduct.monthlySub.productID,
-                                               title: "Monthly",
-                                               description: "Pay less, get more",
-                                               prompt: "Best price",
-                                               price: "$39.99",
-                                               color: .lightGreen)
-}
-
 struct PaywallView: View {
     @State private var selectedProductID = SubscriptionProduct.weeklySub.productID
     @Environment(\.presentationMode) var presentationMode
@@ -157,12 +125,12 @@ struct SubscriptionButton: View {
                 Image(systemName: "arrowtriangle.forward.fill")
                     .resizable()
                     .frame(width: 8, height: 8)
-                    .foregroundColor(.cyan)
+                    .foregroundColor(.lightBlue)
             }
             .frame(maxWidth: .infinity, minHeight: 60)
             .contentShape(Rectangle())
         }
-        .overlay(clipShape.stroke(Color.cyan, lineWidth: 1))
+        .overlay(clipShape.stroke(Color.lightBlue, lineWidth: 1))
         .background(
             clipShape
                 .foregroundColor(.gray)
@@ -182,7 +150,7 @@ struct PackageCellView: View {
         let text = Text(splits[0])
             .font(.title3)
             .fontWeight(.heavy)
-            .foregroundColor(.cyan)
+            .foregroundColor(.lightBlue)
         
         if splits.count == 2 {
             return text +
@@ -269,18 +237,4 @@ struct PaywallView_Previews: PreviewProvider {
     static var previews: some View {
         PaywallView(storeManager: StoreManager(onPurchaseProduct: { _ in }))
     }
-}
-
-extension SKProduct {
-    var localizedPrice: String? {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = priceLocale
-        return formatter.string(from: price)
-    }
-}
-
-private extension Color {
-    static let cyan = Color(.displayP3, red: 53, green: 221, blue: 242)
-    static let lightGreen = Color(.displayP3, red: 59, green: 242, blue: 80)
 }
