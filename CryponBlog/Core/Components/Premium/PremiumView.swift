@@ -10,7 +10,8 @@ import SwiftUI
 struct PremiumView: View {
     let restorePurchases: () -> Void
     var selectedPackage: (_ months: String, _ total: String) -> Void
-    
+    @AppStorage(SubscriptionProduct.weeklySub.productID) private var weeklyPrice = Package.weeklyPackage.price
+    @AppStorage(SubscriptionProduct.monthlySub.productID) private var monthlyPrice = Package.monthlyPackage.price
     @Binding var selectedPremiumBS: BottomSheetSelectedPremium
     
     var body: some View {
@@ -18,9 +19,9 @@ struct PremiumView: View {
             RadioButtonGroups { package in
                 
                 if package == "months12" {
-                    selectedPackage("12", "39.99")
+                    selectedPackage("12", monthlyPrice)
                 } else {
-                    selectedPackage("1", "12.99")
+                    selectedPackage("1", weeklyPrice)
                 }
             }
             

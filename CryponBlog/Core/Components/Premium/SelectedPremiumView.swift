@@ -7,12 +7,28 @@
 
 import SwiftUI
 
+let priceFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter
+}()
+
 struct SelectedPremiumView: View {
     let onClickPurchase: () -> Void
     var months: String
     var total: String
     var is12Months: Bool
     @StateObject var storeManager: StoreManager
+    
+    @AppStorage("\(SubscriptionProduct.weeklySub.productID)_price") private var weeklyPrice: Double = 12.99
+    @AppStorage("\(SubscriptionProduct.monthlySub.productID)_price") private var monthlyPrice: Double = 39.99
+    private var originalPrice: String { priceFormatter.string(from: round(weeklyPrice*400) / 100 as NSNumber) ?? "51.96" }
+    
+    private var discount: Int {
+        let originalPrice = weeklyPrice * 4
+        let newPrice = monthlyPrice
+        return Int(round((originalPrice - newPrice) / originalPrice * 10000) / 100)
+    }
     
     var body: some View {
         VStack{
@@ -34,15 +50,15 @@ struct SelectedPremiumView: View {
                 
                 VStack{
                     HStack{
-                        Text("$51.96")
+                        Text(originalPrice)
                             .foregroundColor(.red)
                             .strikethrough()
                             .opacity(is12Months ? 1 : 0)
                         
-                        Text("$\(total)")
+                        Text(total)
                             .font(.system(size: 16, weight: .bold, design: .default))
                     }
-                    Text("You saved 23%")
+                    Text("You saved \(discount)%")
                         .foregroundColor(.green)
                         .opacity(is12Months ? 1 : 0)
                 }.padding()

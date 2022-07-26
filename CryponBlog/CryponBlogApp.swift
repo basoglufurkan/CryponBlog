@@ -86,9 +86,11 @@ struct CryponBlogApp: App {
                         storeManager.getProducts(productIDs: productIDs)
                     })
                     .onChange(of: storeManager.myProducts, perform: { products in
-                        // update price from App Store
                         products.forEach {
+                            // save price string from App Store, so we can show it faster on next launch
                             UserDefaults.standard.set($0.localizedPrice, forKey: $0.productIdentifier)
+                            // save price from App Store, so we can calculate the discount rate
+                            UserDefaults.standard.set($0.price, forKey: "\($0.productIdentifier)_price")
                         }
                     })
                     .fullScreenCover(isPresented: $presentPaywall) {

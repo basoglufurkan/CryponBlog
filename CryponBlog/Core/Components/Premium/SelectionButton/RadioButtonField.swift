@@ -21,6 +21,15 @@ struct RadioButtonField: View {
     let isMarked:Bool
     let callback: (String)->()
     
+    @AppStorage("\(SubscriptionProduct.weeklySub.productID)_price") private var weeklyPrice: Double = 12.99
+    @AppStorage("\(SubscriptionProduct.monthlySub.productID)_price") private var monthlyPrice: Double = 39.99
+    
+    private var discount: Int {
+        let originalPrice = weeklyPrice * 4
+        let newPrice = monthlyPrice
+        return Int(round((originalPrice - newPrice) / originalPrice * 10000) / 100)
+    }
+    
     init(
         months: String,
         price: String,
@@ -66,7 +75,7 @@ struct RadioButtonField: View {
                         Text(months == "1" ? "Week" : "Months")
                             .font(.system(size: 12, weight: .regular, design: .default))
                         
-                        Text("SAVE 23%")
+                        Text("SAVE \(discount)%")
                             .foregroundColor(.white)
                             .padding(.top, 10)
                             .padding(.bottom, 10)
@@ -80,7 +89,7 @@ struct RadioButtonField: View {
                             .opacity(is12Months ? 1 : 0)
                         
                         
-                        Text("\(price)$")
+                        Text(price)
                             .font(.system(size: 14, weight: .bold, design: .default))
                         
                         Text(months == "1" ? "Week" : "Month")

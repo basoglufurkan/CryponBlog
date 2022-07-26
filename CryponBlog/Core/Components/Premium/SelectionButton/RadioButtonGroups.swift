@@ -16,6 +16,8 @@ struct RadioButtonGroups: View {
     let callback: (String) -> ()
     
     @State var selectedId: String = ""
+    @AppStorage(SubscriptionProduct.weeklySub.productID) private var weeklyPrice = Package.weeklyPackage.price
+    @AppStorage(SubscriptionProduct.monthlySub.productID) private var monthlyPrice = Package.monthlyPackage.price
     
     var body: some View {
         HStack {
@@ -37,7 +39,7 @@ struct RadioButtonGroups: View {
     
     var radioMaleMajority: some View {
         RadioButtonField(
-            months: "12", price: "39.99", is12Months: true,
+            months: "12", price: monthlyPrice, is12Months: true,
             id: Packages.months12.rawValue,
             label: Packages.months12.rawValue,
             isMarked: selectedId == Packages.months12.rawValue ? true : false,
@@ -47,7 +49,7 @@ struct RadioButtonGroups: View {
     
     var radioFemaleMajority: some View {
         RadioButtonField(
-            months: "1", price: "12.99", is12Months: false,
+            months: "1", price: weeklyPrice, is12Months: false,
             id: Packages.months1.rawValue,
             label: Packages.months1.rawValue,
             isMarked: selectedId == Packages.months1.rawValue ? true : false,
