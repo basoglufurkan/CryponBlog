@@ -85,6 +85,12 @@ struct CryponBlogApp: App {
                         SKPaymentQueue.default().add(storeManager)
                         storeManager.getProducts(productIDs: productIDs)
                     })
+                    .onChange(of: storeManager.myProducts, perform: { products in
+                        // update price from App Store
+                        products.forEach {
+                            UserDefaults.standard.set($0.localizedPrice, forKey: $0.productIdentifier)
+                        }
+                    })
                     .fullScreenCover(isPresented: $presentPaywall) {
                         PaywallView(storeManager: storeManager)
                     }

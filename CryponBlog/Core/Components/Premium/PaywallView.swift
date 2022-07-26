@@ -13,7 +13,7 @@ struct Package: Equatable, Hashable {
     let title: String
     let description: String
     let prompt: String
-    let price: String
+    var price: String
     let color: Color
     
     init(productID: String, title: String, description: String, prompt: String, price: String, color: Color) {
@@ -25,19 +25,19 @@ struct Package: Equatable, Hashable {
         self.color = color
     }
     
-    static var weeklyPackage: Package { .init(productID: SubscriptionProduct.weeklySub.productID,
+    static let weeklyPackage: Package = .init(productID: SubscriptionProduct.weeklySub.productID,
                                               title: "Weekly",
                                               description: "Try making money",
                                               prompt: "First steps",
-                                              price: UserDefaults.standard.string(forKey: SubscriptionProduct.weeklySub.productID) ?? "$12.99",
-                                              color: .cyan) }
+                                              price: "$12.99",
+                                              color: .cyan)
     
-    static var monthlyPackage: Package { .init(productID: SubscriptionProduct.monthlySub.productID,
+    static let monthlyPackage: Package = .init(productID: SubscriptionProduct.monthlySub.productID,
                                                title: "Monthly",
                                                description: "Pay less, get more",
                                                prompt: "Best price",
-                                               price: UserDefaults.standard.string(forKey: SubscriptionProduct.monthlySub.productID) ?? "$39.99",
-                                               color: .lightGreen) }
+                                               price: "$39.99",
+                                               color: .lightGreen)
 }
 
 struct PaywallView: View {
@@ -45,7 +45,18 @@ struct PaywallView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject private(set) var storeManager: StoreManager
-    @State private var packages: [Package] = [.weeklyPackage, .monthlyPackage]
+    @AppStorage(SubscriptionProduct.weeklySub.productID) var weeklySubPrice = "$12.99"
+    @AppStorage(SubscriptionProduct.monthlySub.productID) var monthlySubPrice = "$39.99"
+    
+    // update to use stored App Store price instead of fixed price
+    private var packages: [Package] {
+        var weeklyPackage = Package.weeklyPackage
+        weeklyPackage.price = weeklySubPrice
+        var monthlyPackage = Package.monthlyPackage
+        monthlyPackage.price = monthlySubPrice
+        
+        return [weeklyPackage, monthlyPackage]
+    }
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -64,7 +75,7 @@ struct PaywallView: View {
                         .bold()
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                    ForEach(packages, id: \.self) { package in
+                    ForEach(packages, id: \.productID) { package in
                         PackageCellView(package: package, color: package.color, isSelected: selectedProductID == package.productID) {
                             selectedProductID = package.productID
                         }
@@ -116,15 +127,6 @@ struct PaywallView: View {
             .padding()
         }
         .animation(.easeInOut)
-        .onChange(of: storeManager.myProducts) { products in
-            print("did change store Manager")
-            
-            // update price from App Store
-            products.forEach {
-                UserDefaults.standard.set($0.localizedPrice, forKey: $0.productIdentifier)
-            }
-            packages = [.weeklyPackage, .monthlyPackage]
-        }
     }
 }
 
@@ -270,7 +272,7 @@ struct PaywallView_Previews: PreviewProvider {
     }
 }
 
-private extension SKProduct {
+extension SKProduct {
     var localizedPrice: String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
