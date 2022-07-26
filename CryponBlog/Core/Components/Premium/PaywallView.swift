@@ -76,7 +76,7 @@ struct PaywallView: View {
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                     ForEach(packages, id: \.productID) { package in
-                        PackageCellView(package: package, color: package.color, isSelected: selectedProductID == package.productID) {
+                        PackageCellView(package: package, isSelected: selectedProductID == package.productID) {
                             selectedProductID = package.productID
                         }
                         .frame(maxHeight: 80)
@@ -173,7 +173,6 @@ struct SubscriptionButton: View {
 
 struct PackageCellView: View {
     let package: Package
-    let color: Color
     let isSelected: Bool
     let onTap: () -> Void
     
@@ -218,9 +217,9 @@ struct PackageCellView: View {
                 }
                 .padding()
                 .frame(width: geometry.size.width, height: geometry.size.height)
-                .overlay(RoundedRectangle(cornerSize: .init(width: 16, height: 16)).stroke(color, lineWidth: 2))
+                .overlay(RoundedRectangle(cornerSize: .init(width: 16, height: 16)).stroke(package.color, lineWidth: 2))
                 
-                PromptBanner(title: package.prompt, color: color, radius: 16)
+                PromptBanner(title: package.prompt, color: package.color, radius: 16)
                     .frame(width: 100, height: 24)
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
