@@ -2,7 +2,7 @@
 //  PaywallView.swift
 //  CryponBlog
 //
-//  Created by Ming-Ta Yang on 2022/7/2.
+//  Created by Furkan Başoğlu on 02.07.2022
 //
 
 import SwiftUI

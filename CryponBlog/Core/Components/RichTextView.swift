@@ -2,7 +2,7 @@
 //  RichTextView.swift
 //  CryponBlog
 //
-//  Created by Ming-Ta Yang on 2022/5/23.
+//  Created by Furkan Başoğlu on 23.05.2022
 //
 
 import SwiftUI

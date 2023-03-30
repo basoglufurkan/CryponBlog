@@ -2,7 +2,7 @@
 //  Package.swift
 //  CryponBlog
 //
-//  Created by Ming-Ta Yang on 2022/7/26.
+//  Created by Furkan Başoğlu on 26.07.2022
 //
 
 import SwiftUI

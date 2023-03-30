@@ -1,8 +1,8 @@
 //
 //  FirestoreManager.swift
-//  BlogApp
+//  CryponBlog
 //
-//  Created by Ming-Ta Yang on 2022/5/18.
+//  Created by Furkan Başoğlu on 18.04.2022
 //
 
 import FirebaseFirestore

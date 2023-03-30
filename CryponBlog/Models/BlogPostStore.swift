@@ -10,10 +10,10 @@ import Contentful
 //import Combine
 import Foundation
 
-// change to your spaceID and accessToken
+
 // you can find these in Settings -> API keys on Contentful
-let spaceId = "z6v8t7djocdh"
-let accessToken = "GzQezJ5TzisnZNjA6pIWKzy7YxixjSowCIUT4jIn7W8"
+let spaceId = ""
+let accessToken = ""
 
 let client = Client(spaceId: spaceId, accessToken: accessToken)
 
