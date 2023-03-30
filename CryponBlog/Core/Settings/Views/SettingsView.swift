@@ -53,20 +53,20 @@ extension SettingsView {
         Section(header: Text("Crypon")) {
             VStack(alignment: .leading) {
                 HStack {
-                    Image("instw")
+                    Image("telinsta")
                         .resizable()
-                        .frame(width: 200, height: 100)
+                        .frame(width: 150, height: 100)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
                 }
-                Text("Follow us on Instagram and Twitter.")
+                Text("Follow us on Instagram and Telegram.")
                     .font(.callout)
                     .fontWeight(.medium)
                     .foregroundColor(Color.theme.accent)
             }
             .padding(.vertical)
             Link("Instagram 🥳", destination: AppConfig.instagramURL)
-            Link("Twitter 🥳", destination: AppConfig.twitterURL)
+            Link("Telegram 🥳", destination: AppConfig.telegramURL)
         }
     }
     

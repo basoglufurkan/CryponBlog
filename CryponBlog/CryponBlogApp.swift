@@ -96,19 +96,7 @@ struct CryponBlogApp: App {
                     .fullScreenCover(isPresented: $presentPaywall) {
                         PaywallView(storeManager: storeManager)
                     }
-                ZStack {
-                    if showLaunchView {
-                        LaunchView(showLaunchView: $showLaunchView)
-                            .transition(.move(edge: .leading))
-                            .onDisappear {
-                                // show paywall for non-subscriber after launch view disappear
-                                if !subscriptionActive {
-                                    presentPaywall = true
-                                }
-                            }
-                    }
-                }
-                .zIndex(2.0)
+                
             }
         }
     }

@@ -18,7 +18,7 @@ struct AllPosts: View {
             List {
                 ForEach(Array(store.blogPosts.enumerated()), id: \.offset) { index, element in
                     if storeManager.myProducts.isEmpty {
-                        if index > 3 {
+                        if index > 2 {
                             NavigationLink(destination: BlogPostView(blogPost: store.blogPosts[index])) {
                                 BlogPostCardList(blogPost: store.blogPosts[index])
                             }
@@ -26,7 +26,7 @@ struct AllPosts: View {
                             BlogPostCardLocked(premiumBS: $premiumBS, blogPost: store.blogPosts[index])
                         }
                     } else if !unlockAllPosts {
-                        if index > 3 {
+                        if index > 2 {
                             NavigationLink(destination: BlogPostView(blogPost: store.blogPosts[index])) {
                                 BlogPostCardList(blogPost: store.blogPosts[index])
                             }
@@ -43,6 +43,11 @@ struct AllPosts: View {
             }
             .navigationTitle("Signals")
             .listStyle(InsetListStyle())
+            .navigationBarItems(
+                trailing: Button(action: {store.refreshView()}) { Image(systemName: "arrow.clockwise.circle.fill")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            })
         }
         .navigationViewStyle(.stack)
     }

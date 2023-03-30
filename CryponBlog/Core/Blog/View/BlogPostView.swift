@@ -28,7 +28,7 @@ struct BlogPostView: View {
     @ViewBuilder
     private var viewCountView: some View {
         HStack {
-            Image(systemName: "eye")
+//            Image(systemName: "eye")
             Text(viewCountDisplay)
         }
     }
